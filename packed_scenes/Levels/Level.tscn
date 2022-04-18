@@ -1,0 +1,3063 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/Level.cs" type="Script" id=1]
+[ext_resource path="res://sprites/atlas_0001.sprites/pixels/white_pixel.tres" type="Texture" id=2]
+[ext_resource path="res://packed_scenes/Tiles/FloorTile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://packed_scenes/Tiles/PlayerTile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://packed_scenes/Tiles/WallTile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://packed_scenes/Tiles/EnemyTile.tscn" type="PackedScene" id=6]
+[ext_resource path="res://packed_scenes/Grid.tscn" type="PackedScene" id=7]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="Sprite" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Tiles" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorTiles" type="Node2D" parent="Tiles"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FloorTile" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+
+[node name="FloorTile2" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 0 )
+
+[node name="FloorTile3" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 0 )
+
+[node name="FloorTile4" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 0 )
+
+[node name="FloorTile5" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 0 )
+
+[node name="FloorTile6" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 0 )
+
+[node name="FloorTile7" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 0 )
+
+[node name="FloorTile8" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 0 )
+
+[node name="FloorTile9" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 0 )
+
+[node name="FloorTile10" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 0 )
+
+[node name="FloorTile11" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 0 )
+
+[node name="FloorTile12" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 0 )
+
+[node name="FloorTile13" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 0 )
+
+[node name="FloorTile14" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 0 )
+
+[node name="FloorTile15" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 0 )
+
+[node name="FloorTile16" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 0 )
+
+[node name="FloorTile17" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 0 )
+
+[node name="FloorTile18" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 0 )
+
+[node name="FloorTile19" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 0 )
+
+[node name="FloorTile20" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 0 )
+
+[node name="FloorTile21" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 0 )
+
+[node name="FloorTile22" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 0 )
+
+[node name="FloorTile23" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 0 )
+
+[node name="FloorTile24" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 0 )
+
+[node name="FloorTile25" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 0 )
+
+[node name="FloorTile26" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 0 )
+
+[node name="FloorTile27" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 0 )
+
+[node name="FloorTile28" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 0 )
+
+[node name="FloorTile29" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 20 )
+
+[node name="FloorTile30" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 20 )
+
+[node name="FloorTile31" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 20 )
+
+[node name="FloorTile32" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 20 )
+
+[node name="FloorTile33" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 20 )
+
+[node name="FloorTile34" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 20 )
+
+[node name="FloorTile35" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 20 )
+
+[node name="FloorTile36" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 20 )
+
+[node name="FloorTile37" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 20 )
+
+[node name="FloorTile38" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 20 )
+
+[node name="FloorTile39" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 20 )
+
+[node name="FloorTile40" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 20 )
+
+[node name="FloorTile41" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 20 )
+
+[node name="FloorTile42" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 20 )
+
+[node name="FloorTile43" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 20 )
+
+[node name="FloorTile44" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 20 )
+
+[node name="FloorTile45" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 20 )
+
+[node name="FloorTile46" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 20 )
+
+[node name="FloorTile47" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 20 )
+
+[node name="FloorTile48" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 20 )
+
+[node name="FloorTile49" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 20 )
+
+[node name="FloorTile50" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 20 )
+
+[node name="FloorTile51" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 20 )
+
+[node name="FloorTile52" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 20 )
+
+[node name="FloorTile53" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 20 )
+
+[node name="FloorTile54" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 20 )
+
+[node name="FloorTile55" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 20 )
+
+[node name="FloorTile56" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 20 )
+
+[node name="FloorTile57" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 40 )
+
+[node name="FloorTile58" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 40 )
+
+[node name="FloorTile59" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 40 )
+
+[node name="FloorTile60" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 40 )
+
+[node name="FloorTile61" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 40 )
+
+[node name="FloorTile62" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 40 )
+
+[node name="FloorTile63" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 40 )
+
+[node name="FloorTile64" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 40 )
+
+[node name="FloorTile65" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 40 )
+
+[node name="FloorTile66" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 40 )
+
+[node name="FloorTile67" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 40 )
+
+[node name="FloorTile68" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 40 )
+
+[node name="FloorTile69" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 40 )
+
+[node name="FloorTile70" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 40 )
+
+[node name="FloorTile71" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 40 )
+
+[node name="FloorTile72" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 40 )
+
+[node name="FloorTile73" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 40 )
+
+[node name="FloorTile74" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 40 )
+
+[node name="FloorTile75" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 40 )
+
+[node name="FloorTile76" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 40 )
+
+[node name="FloorTile77" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 40 )
+
+[node name="FloorTile78" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 40 )
+
+[node name="FloorTile79" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 40 )
+
+[node name="FloorTile80" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 40 )
+
+[node name="FloorTile81" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 40 )
+
+[node name="FloorTile82" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 40 )
+
+[node name="FloorTile83" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 40 )
+
+[node name="FloorTile84" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 40 )
+
+[node name="FloorTile85" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 60 )
+
+[node name="FloorTile86" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 60 )
+
+[node name="FloorTile87" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 60 )
+
+[node name="FloorTile88" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 60 )
+
+[node name="FloorTile89" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 60 )
+
+[node name="FloorTile90" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 60 )
+
+[node name="FloorTile91" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 60 )
+
+[node name="FloorTile92" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 60 )
+
+[node name="FloorTile93" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 60 )
+
+[node name="FloorTile94" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 60 )
+
+[node name="FloorTile95" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 60 )
+
+[node name="FloorTile96" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 60 )
+
+[node name="FloorTile97" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 60 )
+
+[node name="FloorTile98" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 60 )
+
+[node name="FloorTile99" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 60 )
+
+[node name="FloorTile100" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 60 )
+
+[node name="FloorTile101" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 60 )
+
+[node name="FloorTile102" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 60 )
+
+[node name="FloorTile103" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 60 )
+
+[node name="FloorTile104" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 60 )
+
+[node name="FloorTile105" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 60 )
+
+[node name="FloorTile106" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 60 )
+
+[node name="FloorTile107" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 60 )
+
+[node name="FloorTile108" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 60 )
+
+[node name="FloorTile109" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 60 )
+
+[node name="FloorTile110" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 60 )
+
+[node name="FloorTile111" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 60 )
+
+[node name="FloorTile112" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 60 )
+
+[node name="FloorTile113" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 80 )
+
+[node name="FloorTile114" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 80 )
+
+[node name="FloorTile115" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 80 )
+
+[node name="FloorTile116" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 80 )
+
+[node name="FloorTile117" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 80 )
+
+[node name="FloorTile118" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 80 )
+
+[node name="FloorTile119" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 80 )
+
+[node name="FloorTile120" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 80 )
+
+[node name="FloorTile121" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 80 )
+
+[node name="FloorTile122" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 80 )
+
+[node name="FloorTile123" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 80 )
+
+[node name="FloorTile124" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 80 )
+
+[node name="FloorTile125" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 80 )
+
+[node name="FloorTile126" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 80 )
+
+[node name="FloorTile127" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 80 )
+
+[node name="FloorTile128" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 80 )
+
+[node name="FloorTile129" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 80 )
+
+[node name="FloorTile130" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 80 )
+
+[node name="FloorTile131" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 80 )
+
+[node name="FloorTile132" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 80 )
+
+[node name="FloorTile133" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 80 )
+
+[node name="FloorTile134" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 80 )
+
+[node name="FloorTile135" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 80 )
+
+[node name="FloorTile136" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 80 )
+
+[node name="FloorTile137" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 80 )
+
+[node name="FloorTile138" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 80 )
+
+[node name="FloorTile139" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 80 )
+
+[node name="FloorTile140" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 80 )
+
+[node name="FloorTile141" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 100 )
+
+[node name="FloorTile142" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 100 )
+
+[node name="FloorTile143" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 100 )
+
+[node name="FloorTile144" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 100 )
+
+[node name="FloorTile145" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 100 )
+
+[node name="FloorTile146" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 100 )
+
+[node name="FloorTile147" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 100 )
+
+[node name="FloorTile148" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 100 )
+
+[node name="FloorTile149" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 100 )
+
+[node name="FloorTile150" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 100 )
+
+[node name="FloorTile151" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 100 )
+
+[node name="FloorTile152" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 100 )
+
+[node name="FloorTile153" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 100 )
+
+[node name="FloorTile154" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 100 )
+
+[node name="FloorTile155" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 100 )
+
+[node name="FloorTile156" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 100 )
+
+[node name="FloorTile157" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 100 )
+
+[node name="FloorTile158" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 100 )
+
+[node name="FloorTile159" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 100 )
+
+[node name="FloorTile160" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 100 )
+
+[node name="FloorTile161" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 100 )
+
+[node name="FloorTile162" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 100 )
+
+[node name="FloorTile163" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 100 )
+
+[node name="FloorTile164" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 100 )
+
+[node name="FloorTile165" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 100 )
+
+[node name="FloorTile166" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 100 )
+
+[node name="FloorTile167" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 100 )
+
+[node name="FloorTile168" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 100 )
+
+[node name="FloorTile169" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 120 )
+
+[node name="FloorTile170" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 120 )
+
+[node name="FloorTile171" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 120 )
+
+[node name="FloorTile172" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 120 )
+
+[node name="FloorTile173" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 120 )
+
+[node name="FloorTile174" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 120 )
+
+[node name="FloorTile175" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 120 )
+
+[node name="FloorTile176" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 120 )
+
+[node name="FloorTile177" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 120 )
+
+[node name="FloorTile178" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 120 )
+
+[node name="FloorTile179" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 120 )
+
+[node name="FloorTile180" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 120 )
+
+[node name="FloorTile181" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 120 )
+
+[node name="FloorTile182" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 120 )
+
+[node name="FloorTile183" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 120 )
+
+[node name="FloorTile184" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 120 )
+
+[node name="FloorTile185" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 120 )
+
+[node name="FloorTile186" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 120 )
+
+[node name="FloorTile187" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 120 )
+
+[node name="FloorTile188" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 120 )
+
+[node name="FloorTile189" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 120 )
+
+[node name="FloorTile190" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 120 )
+
+[node name="FloorTile191" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 120 )
+
+[node name="FloorTile192" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 120 )
+
+[node name="FloorTile193" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 120 )
+
+[node name="FloorTile194" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 120 )
+
+[node name="FloorTile195" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 120 )
+
+[node name="FloorTile196" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 120 )
+
+[node name="FloorTile197" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 140 )
+
+[node name="FloorTile198" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 140 )
+
+[node name="FloorTile199" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 140 )
+
+[node name="FloorTile200" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 140 )
+
+[node name="FloorTile201" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 140 )
+
+[node name="FloorTile202" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 140 )
+
+[node name="FloorTile203" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 140 )
+
+[node name="FloorTile204" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 140 )
+
+[node name="FloorTile205" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 140 )
+
+[node name="FloorTile206" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 140 )
+
+[node name="FloorTile207" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 140 )
+
+[node name="FloorTile208" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 140 )
+
+[node name="FloorTile209" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 140 )
+
+[node name="FloorTile210" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 140 )
+
+[node name="FloorTile211" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 140 )
+
+[node name="FloorTile212" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 140 )
+
+[node name="FloorTile213" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 140 )
+
+[node name="FloorTile214" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 140 )
+
+[node name="FloorTile215" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 140 )
+
+[node name="FloorTile216" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 140 )
+
+[node name="FloorTile217" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 140 )
+
+[node name="FloorTile218" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 140 )
+
+[node name="FloorTile219" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 140 )
+
+[node name="FloorTile220" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 140 )
+
+[node name="FloorTile221" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 140 )
+
+[node name="FloorTile222" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 140 )
+
+[node name="FloorTile223" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 140 )
+
+[node name="FloorTile224" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 140 )
+
+[node name="FloorTile225" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 160 )
+
+[node name="FloorTile226" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 160 )
+
+[node name="FloorTile227" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 160 )
+
+[node name="FloorTile228" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 160 )
+
+[node name="FloorTile229" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 160 )
+
+[node name="FloorTile230" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 160 )
+
+[node name="FloorTile231" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 160 )
+
+[node name="FloorTile232" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 160 )
+
+[node name="FloorTile233" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 160 )
+
+[node name="FloorTile234" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 160 )
+
+[node name="FloorTile235" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 160 )
+
+[node name="FloorTile236" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 160 )
+
+[node name="FloorTile237" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 160 )
+
+[node name="FloorTile238" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 160 )
+
+[node name="FloorTile239" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 160 )
+
+[node name="FloorTile240" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 160 )
+
+[node name="FloorTile241" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 160 )
+
+[node name="FloorTile242" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 160 )
+
+[node name="FloorTile243" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 160 )
+
+[node name="FloorTile244" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 160 )
+
+[node name="FloorTile245" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 160 )
+
+[node name="FloorTile246" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 160 )
+
+[node name="FloorTile247" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 160 )
+
+[node name="FloorTile248" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 160 )
+
+[node name="FloorTile249" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 160 )
+
+[node name="FloorTile250" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 160 )
+
+[node name="FloorTile251" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 160 )
+
+[node name="FloorTile252" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 160 )
+
+[node name="FloorTile253" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 180 )
+
+[node name="FloorTile254" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 180 )
+
+[node name="FloorTile255" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 180 )
+
+[node name="FloorTile256" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 180 )
+
+[node name="FloorTile257" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 180 )
+
+[node name="FloorTile258" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 180 )
+
+[node name="FloorTile259" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 180 )
+
+[node name="FloorTile260" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 180 )
+
+[node name="FloorTile261" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 180 )
+
+[node name="FloorTile262" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 180 )
+
+[node name="FloorTile263" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 180 )
+
+[node name="FloorTile264" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 180 )
+
+[node name="FloorTile265" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 180 )
+
+[node name="FloorTile266" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 180 )
+
+[node name="FloorTile267" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 180 )
+
+[node name="FloorTile268" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 180 )
+
+[node name="FloorTile269" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 180 )
+
+[node name="FloorTile270" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 180 )
+
+[node name="FloorTile271" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 180 )
+
+[node name="FloorTile272" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 180 )
+
+[node name="FloorTile273" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 180 )
+
+[node name="FloorTile274" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 180 )
+
+[node name="FloorTile275" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 180 )
+
+[node name="FloorTile276" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 180 )
+
+[node name="FloorTile277" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 180 )
+
+[node name="FloorTile278" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 180 )
+
+[node name="FloorTile279" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 180 )
+
+[node name="FloorTile280" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 180 )
+
+[node name="FloorTile281" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 200 )
+
+[node name="FloorTile282" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 200 )
+
+[node name="FloorTile283" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 200 )
+
+[node name="FloorTile284" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 200 )
+
+[node name="FloorTile285" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 200 )
+
+[node name="FloorTile286" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 200 )
+
+[node name="FloorTile287" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 200 )
+
+[node name="FloorTile288" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 200 )
+
+[node name="FloorTile289" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 200 )
+
+[node name="FloorTile290" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 200 )
+
+[node name="FloorTile291" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 200 )
+
+[node name="FloorTile292" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 200 )
+
+[node name="FloorTile293" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 200 )
+
+[node name="FloorTile294" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 200 )
+
+[node name="FloorTile295" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 200 )
+
+[node name="FloorTile296" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 200 )
+
+[node name="FloorTile297" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 200 )
+
+[node name="FloorTile298" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 200 )
+
+[node name="FloorTile299" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 200 )
+
+[node name="FloorTile300" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 200 )
+
+[node name="FloorTile301" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 200 )
+
+[node name="FloorTile302" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 200 )
+
+[node name="FloorTile303" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 200 )
+
+[node name="FloorTile304" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 200 )
+
+[node name="FloorTile305" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 200 )
+
+[node name="FloorTile306" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 200 )
+
+[node name="FloorTile307" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 200 )
+
+[node name="FloorTile308" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 200 )
+
+[node name="FloorTile309" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 220 )
+
+[node name="FloorTile310" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 220 )
+
+[node name="FloorTile311" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 220 )
+
+[node name="FloorTile312" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 220 )
+
+[node name="FloorTile313" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 220 )
+
+[node name="FloorTile314" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 220 )
+
+[node name="FloorTile315" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 220 )
+
+[node name="FloorTile316" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 220 )
+
+[node name="FloorTile317" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 220 )
+
+[node name="FloorTile318" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 220 )
+
+[node name="FloorTile319" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 220 )
+
+[node name="FloorTile320" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 220 )
+
+[node name="FloorTile321" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 220 )
+
+[node name="FloorTile322" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 220 )
+
+[node name="FloorTile323" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 220 )
+
+[node name="FloorTile324" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 220 )
+
+[node name="FloorTile325" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 220 )
+
+[node name="FloorTile326" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 220 )
+
+[node name="FloorTile327" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 220 )
+
+[node name="FloorTile328" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 220 )
+
+[node name="FloorTile329" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 220 )
+
+[node name="FloorTile330" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 220 )
+
+[node name="FloorTile331" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 220 )
+
+[node name="FloorTile332" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 220 )
+
+[node name="FloorTile333" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 220 )
+
+[node name="FloorTile334" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 220 )
+
+[node name="FloorTile335" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 220 )
+
+[node name="FloorTile336" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 220 )
+
+[node name="FloorTile337" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 240 )
+
+[node name="FloorTile338" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 240 )
+
+[node name="FloorTile339" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 240 )
+
+[node name="FloorTile340" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 240 )
+
+[node name="FloorTile341" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 240 )
+
+[node name="FloorTile342" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 240 )
+
+[node name="FloorTile343" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 240 )
+
+[node name="FloorTile344" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 240 )
+
+[node name="FloorTile345" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 240 )
+
+[node name="FloorTile346" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 240 )
+
+[node name="FloorTile347" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 240 )
+
+[node name="FloorTile348" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 240 )
+
+[node name="FloorTile349" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 240 )
+
+[node name="FloorTile350" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 240 )
+
+[node name="FloorTile351" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 240 )
+
+[node name="FloorTile352" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 240 )
+
+[node name="FloorTile353" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 240 )
+
+[node name="FloorTile354" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 240 )
+
+[node name="FloorTile355" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 240 )
+
+[node name="FloorTile356" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 240 )
+
+[node name="FloorTile357" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 240 )
+
+[node name="FloorTile358" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 240 )
+
+[node name="FloorTile359" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 240 )
+
+[node name="FloorTile360" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 240 )
+
+[node name="FloorTile361" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 240 )
+
+[node name="FloorTile362" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 240 )
+
+[node name="FloorTile363" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 240 )
+
+[node name="FloorTile364" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 240 )
+
+[node name="FloorTile365" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 260 )
+
+[node name="FloorTile366" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 260 )
+
+[node name="FloorTile367" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 260 )
+
+[node name="FloorTile368" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 260 )
+
+[node name="FloorTile369" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 260 )
+
+[node name="FloorTile370" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 260 )
+
+[node name="FloorTile371" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 260 )
+
+[node name="FloorTile372" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 260 )
+
+[node name="FloorTile373" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 260 )
+
+[node name="FloorTile374" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 260 )
+
+[node name="FloorTile375" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 260 )
+
+[node name="FloorTile376" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 260 )
+
+[node name="FloorTile377" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 260 )
+
+[node name="FloorTile378" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 260 )
+
+[node name="FloorTile379" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 260 )
+
+[node name="FloorTile380" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 260 )
+
+[node name="FloorTile381" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 260 )
+
+[node name="FloorTile382" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 260 )
+
+[node name="FloorTile383" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 260 )
+
+[node name="FloorTile384" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 260 )
+
+[node name="FloorTile385" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 260 )
+
+[node name="FloorTile386" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 260 )
+
+[node name="FloorTile387" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 260 )
+
+[node name="FloorTile388" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 260 )
+
+[node name="FloorTile389" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 260 )
+
+[node name="FloorTile390" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 260 )
+
+[node name="FloorTile391" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 260 )
+
+[node name="FloorTile392" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 260 )
+
+[node name="FloorTile393" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 280 )
+
+[node name="FloorTile394" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 280 )
+
+[node name="FloorTile395" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 280 )
+
+[node name="FloorTile396" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 280 )
+
+[node name="FloorTile397" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 280 )
+
+[node name="FloorTile398" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 280 )
+
+[node name="FloorTile399" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 280 )
+
+[node name="FloorTile400" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 280 )
+
+[node name="FloorTile401" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 280 )
+
+[node name="FloorTile402" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 280 )
+
+[node name="FloorTile403" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 280 )
+
+[node name="FloorTile404" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 280 )
+
+[node name="FloorTile405" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 280 )
+
+[node name="FloorTile406" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 280 )
+
+[node name="FloorTile407" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 280 )
+
+[node name="FloorTile408" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 280 )
+
+[node name="FloorTile409" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 280 )
+
+[node name="FloorTile410" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 280 )
+
+[node name="FloorTile411" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 280 )
+
+[node name="FloorTile412" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 280 )
+
+[node name="FloorTile413" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 280 )
+
+[node name="FloorTile414" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 280 )
+
+[node name="FloorTile415" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 280 )
+
+[node name="FloorTile416" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 280 )
+
+[node name="FloorTile417" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 280 )
+
+[node name="FloorTile418" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 280 )
+
+[node name="FloorTile419" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 280 )
+
+[node name="FloorTile420" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 280 )
+
+[node name="FloorTile421" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 300 )
+
+[node name="FloorTile422" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 300 )
+
+[node name="FloorTile423" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 300 )
+
+[node name="FloorTile424" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 300 )
+
+[node name="FloorTile425" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 300 )
+
+[node name="FloorTile426" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 300 )
+
+[node name="FloorTile427" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 300 )
+
+[node name="FloorTile428" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 300 )
+
+[node name="FloorTile429" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 300 )
+
+[node name="FloorTile430" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 300 )
+
+[node name="FloorTile431" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 300 )
+
+[node name="FloorTile432" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 300 )
+
+[node name="FloorTile433" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 300 )
+
+[node name="FloorTile434" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 300 )
+
+[node name="FloorTile435" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 300 )
+
+[node name="FloorTile436" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 300 )
+
+[node name="FloorTile437" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 300 )
+
+[node name="FloorTile438" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 300 )
+
+[node name="FloorTile439" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 300 )
+
+[node name="FloorTile440" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 300 )
+
+[node name="FloorTile441" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 300 )
+
+[node name="FloorTile442" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 300 )
+
+[node name="FloorTile443" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 300 )
+
+[node name="FloorTile444" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 300 )
+
+[node name="FloorTile445" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 300 )
+
+[node name="FloorTile446" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 300 )
+
+[node name="FloorTile447" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 300 )
+
+[node name="FloorTile448" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 300 )
+
+[node name="FloorTile449" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 320 )
+
+[node name="FloorTile450" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 320 )
+
+[node name="FloorTile451" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 320 )
+
+[node name="FloorTile452" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 320 )
+
+[node name="FloorTile453" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 320 )
+
+[node name="FloorTile454" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 320 )
+
+[node name="FloorTile455" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 320 )
+
+[node name="FloorTile456" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 320 )
+
+[node name="FloorTile457" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 320 )
+
+[node name="FloorTile458" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 320 )
+
+[node name="FloorTile459" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 320 )
+
+[node name="FloorTile460" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 320 )
+
+[node name="FloorTile461" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 320 )
+
+[node name="FloorTile462" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 320 )
+
+[node name="FloorTile463" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 320 )
+
+[node name="FloorTile464" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 320 )
+
+[node name="FloorTile465" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 320 )
+
+[node name="FloorTile466" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 320 )
+
+[node name="FloorTile467" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 320 )
+
+[node name="FloorTile468" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 320 )
+
+[node name="FloorTile469" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 320 )
+
+[node name="FloorTile470" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 320 )
+
+[node name="FloorTile471" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 320 )
+
+[node name="FloorTile472" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 320 )
+
+[node name="FloorTile473" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 320 )
+
+[node name="FloorTile474" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 320 )
+
+[node name="FloorTile475" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 320 )
+
+[node name="FloorTile476" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 320 )
+
+[node name="FloorTile477" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 340 )
+
+[node name="FloorTile478" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 340 )
+
+[node name="FloorTile479" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 340 )
+
+[node name="FloorTile480" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 340 )
+
+[node name="FloorTile481" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 340 )
+
+[node name="FloorTile482" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 340 )
+
+[node name="FloorTile483" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 340 )
+
+[node name="FloorTile484" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 340 )
+
+[node name="FloorTile485" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 340 )
+
+[node name="FloorTile486" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 340 )
+
+[node name="FloorTile487" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 340 )
+
+[node name="FloorTile488" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 340 )
+
+[node name="FloorTile489" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 340 )
+
+[node name="FloorTile490" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 340 )
+
+[node name="FloorTile491" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 340 )
+
+[node name="FloorTile492" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 340 )
+
+[node name="FloorTile493" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 340 )
+
+[node name="FloorTile494" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 340 )
+
+[node name="FloorTile495" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 340 )
+
+[node name="FloorTile496" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 340 )
+
+[node name="FloorTile497" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 340 )
+
+[node name="FloorTile498" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 340 )
+
+[node name="FloorTile499" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 340 )
+
+[node name="FloorTile500" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 340 )
+
+[node name="FloorTile501" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 340 )
+
+[node name="FloorTile502" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 340 )
+
+[node name="FloorTile503" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 340 )
+
+[node name="FloorTile504" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 340 )
+
+[node name="FloorTile505" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 360 )
+
+[node name="FloorTile506" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 360 )
+
+[node name="FloorTile507" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 360 )
+
+[node name="FloorTile508" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 360 )
+
+[node name="FloorTile509" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 360 )
+
+[node name="FloorTile510" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 360 )
+
+[node name="FloorTile511" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 360 )
+
+[node name="FloorTile512" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 360 )
+
+[node name="FloorTile513" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 360 )
+
+[node name="FloorTile514" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 360 )
+
+[node name="FloorTile515" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 360 )
+
+[node name="FloorTile516" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 360 )
+
+[node name="FloorTile517" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 360 )
+
+[node name="FloorTile518" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 360 )
+
+[node name="FloorTile519" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 360 )
+
+[node name="FloorTile520" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 360 )
+
+[node name="FloorTile521" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 360 )
+
+[node name="FloorTile522" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 360 )
+
+[node name="FloorTile523" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 360 )
+
+[node name="FloorTile524" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 360 )
+
+[node name="FloorTile525" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 360 )
+
+[node name="FloorTile526" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 360 )
+
+[node name="FloorTile527" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 360 )
+
+[node name="FloorTile528" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 360 )
+
+[node name="FloorTile529" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 360 )
+
+[node name="FloorTile530" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 360 )
+
+[node name="FloorTile531" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 360 )
+
+[node name="FloorTile532" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 360 )
+
+[node name="FloorTile533" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 380 )
+
+[node name="FloorTile534" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 380 )
+
+[node name="FloorTile535" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 380 )
+
+[node name="FloorTile536" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 380 )
+
+[node name="FloorTile537" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 380 )
+
+[node name="FloorTile538" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 380 )
+
+[node name="FloorTile539" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 380 )
+
+[node name="FloorTile540" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 380 )
+
+[node name="FloorTile541" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 380 )
+
+[node name="FloorTile542" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 380 )
+
+[node name="FloorTile543" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 380 )
+
+[node name="FloorTile544" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 380 )
+
+[node name="FloorTile545" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 380 )
+
+[node name="FloorTile546" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 380 )
+
+[node name="FloorTile547" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 380 )
+
+[node name="FloorTile548" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 380 )
+
+[node name="FloorTile549" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 380 )
+
+[node name="FloorTile550" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 380 )
+
+[node name="FloorTile551" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 380 )
+
+[node name="FloorTile552" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 380 )
+
+[node name="FloorTile553" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 380 )
+
+[node name="FloorTile554" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 380 )
+
+[node name="FloorTile555" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 380 )
+
+[node name="FloorTile556" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 380 )
+
+[node name="FloorTile557" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 380 )
+
+[node name="FloorTile558" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 380 )
+
+[node name="FloorTile559" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 380 )
+
+[node name="FloorTile560" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 380 )
+
+[node name="FloorTile561" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 400 )
+
+[node name="FloorTile562" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 400 )
+
+[node name="FloorTile563" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 400 )
+
+[node name="FloorTile564" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 400 )
+
+[node name="FloorTile565" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 400 )
+
+[node name="FloorTile566" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 400 )
+
+[node name="FloorTile567" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 400 )
+
+[node name="FloorTile568" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 400 )
+
+[node name="FloorTile569" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 400 )
+
+[node name="FloorTile570" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 400 )
+
+[node name="FloorTile571" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 400 )
+
+[node name="FloorTile572" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 400 )
+
+[node name="FloorTile573" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 400 )
+
+[node name="FloorTile574" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 400 )
+
+[node name="FloorTile575" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 400 )
+
+[node name="FloorTile576" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 400 )
+
+[node name="FloorTile577" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 400 )
+
+[node name="FloorTile578" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 400 )
+
+[node name="FloorTile579" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 400 )
+
+[node name="FloorTile580" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 400 )
+
+[node name="FloorTile581" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 400 )
+
+[node name="FloorTile582" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 400 )
+
+[node name="FloorTile583" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 400 )
+
+[node name="FloorTile584" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 400 )
+
+[node name="FloorTile585" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 400 )
+
+[node name="FloorTile586" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 400 )
+
+[node name="FloorTile587" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 400 )
+
+[node name="FloorTile588" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 400 )
+
+[node name="FloorTile589" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 420 )
+
+[node name="FloorTile590" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 420 )
+
+[node name="FloorTile591" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 420 )
+
+[node name="FloorTile592" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 420 )
+
+[node name="FloorTile593" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 420 )
+
+[node name="FloorTile594" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 420 )
+
+[node name="FloorTile595" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 420 )
+
+[node name="FloorTile596" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 420 )
+
+[node name="FloorTile597" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 420 )
+
+[node name="FloorTile598" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 420 )
+
+[node name="FloorTile599" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 420 )
+
+[node name="FloorTile600" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 420 )
+
+[node name="FloorTile601" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 420 )
+
+[node name="FloorTile602" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 420 )
+
+[node name="FloorTile603" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 420 )
+
+[node name="FloorTile604" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 420 )
+
+[node name="FloorTile605" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 420 )
+
+[node name="FloorTile606" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 420 )
+
+[node name="FloorTile607" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 420 )
+
+[node name="FloorTile608" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 420 )
+
+[node name="FloorTile609" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 420 )
+
+[node name="FloorTile610" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 420 )
+
+[node name="FloorTile611" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 420 )
+
+[node name="FloorTile612" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 420 )
+
+[node name="FloorTile613" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 420 )
+
+[node name="FloorTile614" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 420 )
+
+[node name="FloorTile615" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 420 )
+
+[node name="FloorTile616" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 420 )
+
+[node name="FloorTile617" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 440 )
+
+[node name="FloorTile618" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 440 )
+
+[node name="FloorTile619" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 440 )
+
+[node name="FloorTile620" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 440 )
+
+[node name="FloorTile621" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 440 )
+
+[node name="FloorTile622" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 440 )
+
+[node name="FloorTile623" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 440 )
+
+[node name="FloorTile624" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 440 )
+
+[node name="FloorTile625" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 440 )
+
+[node name="FloorTile626" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 440 )
+
+[node name="FloorTile627" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 440 )
+
+[node name="FloorTile628" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 440 )
+
+[node name="FloorTile629" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 440 )
+
+[node name="FloorTile630" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 440 )
+
+[node name="FloorTile631" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 440 )
+
+[node name="FloorTile632" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 440 )
+
+[node name="FloorTile633" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 440 )
+
+[node name="FloorTile634" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 440 )
+
+[node name="FloorTile635" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 440 )
+
+[node name="FloorTile636" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 440 )
+
+[node name="FloorTile637" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 440 )
+
+[node name="FloorTile638" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 440 )
+
+[node name="FloorTile639" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 440 )
+
+[node name="FloorTile640" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 440 )
+
+[node name="FloorTile641" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 440 )
+
+[node name="FloorTile642" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 440 )
+
+[node name="FloorTile643" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 440 )
+
+[node name="FloorTile644" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 440 )
+
+[node name="FloorTile645" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 460 )
+
+[node name="FloorTile646" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 460 )
+
+[node name="FloorTile647" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 460 )
+
+[node name="FloorTile648" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 460 )
+
+[node name="FloorTile649" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 460 )
+
+[node name="FloorTile650" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 460 )
+
+[node name="FloorTile651" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 460 )
+
+[node name="FloorTile652" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 460 )
+
+[node name="FloorTile653" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 460 )
+
+[node name="FloorTile654" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 460 )
+
+[node name="FloorTile655" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 460 )
+
+[node name="FloorTile656" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 460 )
+
+[node name="FloorTile657" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 460 )
+
+[node name="FloorTile658" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 460 )
+
+[node name="FloorTile659" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 460 )
+
+[node name="FloorTile660" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 460 )
+
+[node name="FloorTile661" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 460 )
+
+[node name="FloorTile662" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 460 )
+
+[node name="FloorTile663" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 460 )
+
+[node name="FloorTile664" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 460 )
+
+[node name="FloorTile665" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 460 )
+
+[node name="FloorTile666" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 460 )
+
+[node name="FloorTile667" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 460 )
+
+[node name="FloorTile668" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 460 )
+
+[node name="FloorTile669" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 460 )
+
+[node name="FloorTile670" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 460 )
+
+[node name="FloorTile671" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 460 )
+
+[node name="FloorTile672" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 460 )
+
+[node name="FloorTile673" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 480 )
+
+[node name="FloorTile674" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 480 )
+
+[node name="FloorTile675" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 480 )
+
+[node name="FloorTile676" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 480 )
+
+[node name="FloorTile677" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 480 )
+
+[node name="FloorTile678" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 480 )
+
+[node name="FloorTile679" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 480 )
+
+[node name="FloorTile680" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 480 )
+
+[node name="FloorTile681" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 480 )
+
+[node name="FloorTile682" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 480 )
+
+[node name="FloorTile683" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 480 )
+
+[node name="FloorTile684" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 480 )
+
+[node name="FloorTile685" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 480 )
+
+[node name="FloorTile686" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 480 )
+
+[node name="FloorTile687" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 480 )
+
+[node name="FloorTile688" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 480 )
+
+[node name="FloorTile689" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 480 )
+
+[node name="FloorTile690" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 480 )
+
+[node name="FloorTile691" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 480 )
+
+[node name="FloorTile692" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 480 )
+
+[node name="FloorTile693" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 480 )
+
+[node name="FloorTile694" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 480 )
+
+[node name="FloorTile695" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 480 )
+
+[node name="FloorTile696" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 480 )
+
+[node name="FloorTile697" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 480 )
+
+[node name="FloorTile698" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 480 )
+
+[node name="FloorTile699" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 480 )
+
+[node name="FloorTile700" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 480 )
+
+[node name="FloorTile701" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 500 )
+
+[node name="FloorTile702" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 500 )
+
+[node name="FloorTile703" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 500 )
+
+[node name="FloorTile704" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 500 )
+
+[node name="FloorTile705" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 500 )
+
+[node name="FloorTile706" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 500 )
+
+[node name="FloorTile707" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 500 )
+
+[node name="FloorTile708" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 500 )
+
+[node name="FloorTile709" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 500 )
+
+[node name="FloorTile710" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 500 )
+
+[node name="FloorTile711" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 500 )
+
+[node name="FloorTile712" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 500 )
+
+[node name="FloorTile713" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 500 )
+
+[node name="FloorTile714" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 500 )
+
+[node name="FloorTile715" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 500 )
+
+[node name="FloorTile716" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 500 )
+
+[node name="FloorTile717" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 500 )
+
+[node name="FloorTile718" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 500 )
+
+[node name="FloorTile719" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 500 )
+
+[node name="FloorTile720" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 500 )
+
+[node name="FloorTile721" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 500 )
+
+[node name="FloorTile722" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 500 )
+
+[node name="FloorTile723" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 500 )
+
+[node name="FloorTile724" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 500 )
+
+[node name="FloorTile725" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 500 )
+
+[node name="FloorTile726" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 500 )
+
+[node name="FloorTile727" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 500 )
+
+[node name="FloorTile728" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 500 )
+
+[node name="FloorTile729" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 0, 520 )
+
+[node name="FloorTile730" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 20, 520 )
+
+[node name="FloorTile731" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 40, 520 )
+
+[node name="FloorTile732" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 60, 520 )
+
+[node name="FloorTile733" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 80, 520 )
+
+[node name="FloorTile734" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 100, 520 )
+
+[node name="FloorTile735" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 120, 520 )
+
+[node name="FloorTile736" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 140, 520 )
+
+[node name="FloorTile737" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 160, 520 )
+
+[node name="FloorTile738" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 180, 520 )
+
+[node name="FloorTile739" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 200, 520 )
+
+[node name="FloorTile740" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 220, 520 )
+
+[node name="FloorTile741" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 240, 520 )
+
+[node name="FloorTile742" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 260, 520 )
+
+[node name="FloorTile743" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 280, 520 )
+
+[node name="FloorTile744" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 300, 520 )
+
+[node name="FloorTile745" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 320, 520 )
+
+[node name="FloorTile746" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 340, 520 )
+
+[node name="FloorTile747" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 360, 520 )
+
+[node name="FloorTile748" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 380, 520 )
+
+[node name="FloorTile749" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 400, 520 )
+
+[node name="FloorTile750" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 420, 520 )
+
+[node name="FloorTile751" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 440, 520 )
+
+[node name="FloorTile752" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 460, 520 )
+
+[node name="FloorTile753" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 480, 520 )
+
+[node name="FloorTile754" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 500, 520 )
+
+[node name="FloorTile755" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 520, 520 )
+
+[node name="FloorTile756" parent="Tiles/FloorTiles" instance=ExtResource( 3 )]
+position = Vector2( 540, 520 )
+
+[node name="ItemTiles" type="Node2D" parent="Tiles"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallTiles" type="Node2D" parent="Tiles"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WallTile" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+
+[node name="WallTile2" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 20, 0 )
+
+[node name="WallTile3" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 40, 0 )
+
+[node name="WallTile4" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 60, 0 )
+
+[node name="WallTile5" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 80, 0 )
+
+[node name="WallTile6" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 100, 0 )
+
+[node name="WallTile7" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 120, 0 )
+
+[node name="WallTile8" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 140, 0 )
+
+[node name="WallTile9" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 160, 0 )
+
+[node name="WallTile10" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 180, 0 )
+
+[node name="WallTile11" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 0 )
+
+[node name="WallTile12" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 220, 0 )
+
+[node name="WallTile13" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 0 )
+
+[node name="WallTile14" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 260, 0 )
+
+[node name="WallTile183" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 320, 0 )
+
+[node name="WallTile184" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 340, 0 )
+
+[node name="WallTile185" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 360, 0 )
+
+[node name="WallTile186" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 380, 0 )
+
+[node name="WallTile187" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 400, 0 )
+
+[node name="WallTile188" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 420, 0 )
+
+[node name="WallTile189" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 440, 0 )
+
+[node name="WallTile190" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 460, 0 )
+
+[node name="WallTile191" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 480, 0 )
+
+[node name="WallTile192" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 500, 0 )
+
+[node name="WallTile193" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 520, 0 )
+
+[node name="WallTile15" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 280, 0 )
+
+[node name="WallTile16" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 0 )
+
+[node name="WallTile17" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 300 )
+
+[node name="WallTile18" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 20, 300 )
+
+[node name="WallTile19" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 40, 300 )
+
+[node name="WallTile20" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 60, 300 )
+
+[node name="WallTile21" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 80, 300 )
+
+[node name="WallTile22" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 100, 300 )
+
+[node name="WallTile23" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 120, 300 )
+
+[node name="WallTile24" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 120, 320 )
+
+[node name="WallTile25" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 120, 340 )
+
+[node name="WallTile26" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 100, 340 )
+
+[node name="WallTile53" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 100, 360 )
+
+[node name="WallTile54" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 100, 380 )
+
+[node name="WallTile55" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 100, 400 )
+
+[node name="WallTile128" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 100, 420 )
+
+[node name="WallTile129" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 60, 420 )
+
+[node name="WallTile130" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 40, 420 )
+
+[node name="WallTile131" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 20, 420 )
+
+[node name="WallTile132" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 420 )
+
+[node name="WallTile27" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 300 )
+
+[node name="WallTile28" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 220, 300 )
+
+[node name="WallTile29" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 300 )
+
+[node name="WallTile30" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 260, 300 )
+
+[node name="WallTile31" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 280, 300 )
+
+[node name="WallTile32" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 300 )
+
+[node name="WallTile33" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 280 )
+
+[node name="WallTile34" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 260 )
+
+[node name="WallTile61" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 20, 240 )
+
+[node name="WallTile62" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 60, 240 )
+
+[node name="WallTile63" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 80, 240 )
+
+[node name="WallTile64" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 80, 260 )
+
+[node name="WallTile65" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 80, 280 )
+
+[node name="WallTile66" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 60, 220 )
+
+[node name="WallTile67" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 60, 200 )
+
+[node name="WallTile68" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 60, 180 )
+
+[node name="WallTile69" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 60, 160 )
+
+[node name="WallTile70" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 80, 160 )
+
+[node name="WallTile71" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 100, 160 )
+
+[node name="WallTile72" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 140, 160 )
+
+[node name="WallTile73" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 180, 160 )
+
+[node name="WallTile74" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 160 )
+
+[node name="WallTile75" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 180 )
+
+[node name="WallTile76" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 200 )
+
+[node name="WallTile77" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 220 )
+
+[node name="WallTile78" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 180, 220 )
+
+[node name="WallTile79" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 160, 220 )
+
+[node name="WallTile80" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 140, 220 )
+
+[node name="WallTile81" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 140, 200 )
+
+[node name="WallTile82" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 140, 240 )
+
+[node name="WallTile83" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 140, 260 )
+
+[node name="WallTile84" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 120, 260 )
+
+[node name="WallTile85" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 160, 260 )
+
+[node name="WallTile86" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 180, 260 )
+
+[node name="WallTile87" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 260 )
+
+[node name="WallTile88" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 260 )
+
+[node name="WallTile89" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 240 )
+
+[node name="WallTile90" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 220 )
+
+[node name="WallTile91" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 260, 220 )
+
+[node name="WallTile92" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 260, 180 )
+
+[node name="WallTile93" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 180 )
+
+[node name="WallTile94" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 160 )
+
+[node name="WallTile95" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 260, 160 )
+
+[node name="WallTile96" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 260, 140 )
+
+[node name="WallTile97" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 140 )
+
+[node name="WallTile98" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 260, 100 )
+
+[node name="WallTile99" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 100 )
+
+[node name="WallTile100" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 120 )
+
+[node name="WallTile101" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 140 )
+
+[node name="WallTile102" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 120 )
+
+[node name="WallTile103" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 60, 120 )
+
+[node name="WallTile104" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 80, 120 )
+
+[node name="WallTile105" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 100, 120 )
+
+[node name="WallTile106" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 40, 120 )
+
+[node name="WallTile107" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 20, 120 )
+
+[node name="WallTile108" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 20, 140 )
+
+[node name="WallTile109" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 140, 120 )
+
+[node name="WallTile110" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 160, 120 )
+
+[node name="WallTile111" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 160, 100 )
+
+[node name="WallTile112" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 160, 80 )
+
+[node name="WallTile113" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 160, 60 )
+
+[node name="WallTile114" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 160, 40 )
+
+[node name="WallTile115" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 160, 20 )
+
+[node name="WallTile116" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 40, 40 )
+
+[node name="WallTile117" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 120, 40 )
+
+[node name="WallTile118" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 120, 80 )
+
+[node name="WallTile119" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 40, 80 )
+
+[node name="WallTile120" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 80, 60 )
+
+[node name="WallTile121" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 60 )
+
+[node name="WallTile122" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 220, 60 )
+
+[node name="WallTile123" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 60 )
+
+[node name="WallTile124" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 260, 60 )
+
+[node name="WallTile125" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 40 )
+
+[node name="WallTile126" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 220, 40 )
+
+[node name="WallTile127" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 220, 20 )
+
+[node name="WallTile35" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 240 )
+
+[node name="WallTile36" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 220 )
+
+[node name="WallTile133" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 400 )
+
+[node name="WallTile134" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 380 )
+
+[node name="WallTile135" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 360 )
+
+[node name="WallTile206" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 500 )
+
+[node name="WallTile207" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 480 )
+
+[node name="WallTile208" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 460 )
+
+[node name="WallTile209" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 440 )
+
+[node name="WallTile136" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 340 )
+
+[node name="WallTile137" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 320 )
+
+[node name="WallTile221" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 300 )
+
+[node name="WallTile222" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 420 )
+
+[node name="WallTile223" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 280 )
+
+[node name="WallTile224" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 260 )
+
+[node name="WallTile225" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 400 )
+
+[node name="WallTile226" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 380 )
+
+[node name="WallTile232" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 360 )
+
+[node name="WallTile233" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 500 )
+
+[node name="WallTile234" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 480 )
+
+[node name="WallTile235" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 460 )
+
+[node name="WallTile236" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 440 )
+
+[node name="WallTile237" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 340 )
+
+[node name="WallTile238" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 320 )
+
+[node name="WallTile239" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 120 )
+
+[node name="WallTile240" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 240 )
+
+[node name="WallTile241" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 100 )
+
+[node name="WallTile242" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 80 )
+
+[node name="WallTile243" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 220 )
+
+[node name="WallTile244" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 200 )
+
+[node name="WallTile245" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 180 )
+
+[node name="WallTile250" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 160 )
+
+[node name="WallTile251" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 140 )
+
+[node name="WallTile138" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 400 )
+
+[node name="WallTile143" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 440 )
+
+[node name="WallTile144" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 220, 440 )
+
+[node name="WallTile145" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 440 )
+
+[node name="WallTile194" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 180, 520 )
+
+[node name="WallTile195" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 520 )
+
+[node name="WallTile196" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 220, 520 )
+
+[node name="WallTile197" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 120, 520 )
+
+[node name="WallTile198" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 140, 520 )
+
+[node name="WallTile199" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 160, 520 )
+
+[node name="WallTile200" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 60, 520 )
+
+[node name="WallTile201" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 80, 520 )
+
+[node name="WallTile202" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 100, 520 )
+
+[node name="WallTile203" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 520 )
+
+[node name="WallTile204" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 20, 520 )
+
+[node name="WallTile205" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 40, 520 )
+
+[node name="WallTile210" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 400, 520 )
+
+[node name="WallTile211" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 420, 520 )
+
+[node name="WallTile212" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 440, 520 )
+
+[node name="WallTile213" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 340, 520 )
+
+[node name="WallTile214" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 360, 520 )
+
+[node name="WallTile215" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 380, 520 )
+
+[node name="WallTile216" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 280, 520 )
+
+[node name="WallTile217" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 520 )
+
+[node name="WallTile218" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 320, 520 )
+
+[node name="WallTile219" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 240, 520 )
+
+[node name="WallTile220" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 260, 520 )
+
+[node name="WallTile227" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 500, 520 )
+
+[node name="WallTile228" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 520, 520 )
+
+[node name="WallTile229" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 520 )
+
+[node name="WallTile230" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 460, 520 )
+
+[node name="WallTile231" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 480, 520 )
+
+[node name="WallTile146" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 260, 440 )
+
+[node name="WallTile147" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 280, 440 )
+
+[node name="WallTile148" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 280, 420 )
+
+[node name="WallTile149" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 420 )
+
+[node name="WallTile150" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 400 )
+
+[node name="WallTile151" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 320, 400 )
+
+[node name="WallTile152" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 320, 380 )
+
+[node name="WallTile153" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 340, 380 )
+
+[node name="WallTile154" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 340, 360 )
+
+[node name="WallTile155" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 340, 340 )
+
+[node name="WallTile156" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 360, 340 )
+
+[node name="WallTile157" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 380, 340 )
+
+[node name="WallTile158" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 400, 340 )
+
+[node name="WallTile159" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 400, 320 )
+
+[node name="WallTile160" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 400, 300 )
+
+[node name="WallTile182" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 60 )
+
+[node name="WallTile176" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 40 )
+
+[node name="WallTile177" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 20 )
+
+[node name="WallTile178" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 540, 0 )
+
+[node name="WallTile139" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 380 )
+
+[node name="WallTile140" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 360 )
+
+[node name="WallTile141" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 340 )
+
+[node name="WallTile142" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 200, 320 )
+
+[node name="WallTile37" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 200 )
+
+[node name="WallTile38" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 180 )
+
+[node name="WallTile39" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 160 )
+
+[node name="WallTile40" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 140 )
+
+[node name="WallTile41" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 120 )
+
+[node name="WallTile42" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 100 )
+
+[node name="WallTile43" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 80 )
+
+[node name="WallTile44" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 60 )
+
+[node name="WallTile45" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 40 )
+
+[node name="WallTile46" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 0, 20 )
+
+[node name="WallTile47" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 20 )
+
+[node name="WallTile48" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 40 )
+
+[node name="WallTile49" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 60 )
+
+[node name="WallTile50" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 80 )
+
+[node name="WallTile51" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 100 )
+
+[node name="WallTile52" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 120 )
+
+[node name="WallTile56" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 200 )
+
+[node name="WallTile57" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 220 )
+
+[node name="WallTile58" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 240 )
+
+[node name="WallTile59" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 260 )
+
+[node name="WallTile60" parent="Tiles/WallTiles" instance=ExtResource( 5 )]
+position = Vector2( 300, 280 )
+
+[node name="EnemyTiles" type="Node2D" parent="Tiles"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EnemyTile" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 100, 200 )
+
+[node name="EnemyTile2" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 20, 280 )
+
+[node name="EnemyTile3" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 20, 180 )
+
+[node name="EnemyTile4" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 20, 100 )
+
+[node name="EnemyTile5" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 40, 60 )
+
+[node name="EnemyTile6" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 200, 20 )
+
+[node name="EnemyTile7" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 200, 100 )
+
+[node name="EnemyTile8" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 260, 40 )
+
+[node name="EnemyTile9" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 280, 160 )
+
+[node name="EnemyTile10" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 260, 260 )
+
+[node name="EnemyTile11" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 180, 240 )
+
+[node name="EnemyTile12" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 160, 280 )
+
+[node name="EnemyTile13" parent="Tiles/EnemyTiles" instance=ExtResource( 6 )]
+position = Vector2( 100, 20 )
+
+[node name="PlayerTile" parent="Tiles" instance=ExtResource( 4 )]
+position = Vector2( 420, 160 )
+
+[node name="Grid" parent="." instance=ExtResource( 7 )]
+GridColor = Color( 1, 1, 1, 0.121569 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 240, 200 )
+current = true
+process_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 5120
+limit_bottom = 5120
+smoothing_speed = 20.0
+editor_draw_limits = true
+
+[node name="Center" type="Position2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}

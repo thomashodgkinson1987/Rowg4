@@ -1,0 +1,25 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://packed_scenes/Tiles/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/atlas_0001.sprites/actors/RLNEW2_153.tres" type="Texture" id=2]
+[ext_resource path="res://scripts/EnemyTile.cs" type="Script" id=3]
+[ext_resource path="res://sprites/atlas_0001.sprites/actors/RLNEW2_098.tres" type="Texture" id=4]
+[ext_resource path="res://sprites/atlas_0001.sprites/actors/RLNEW2_097.tres" type="Texture" id=5]
+[ext_resource path="res://sprites/atlas_0001.sprites/actors/RLNEW2_096.tres" type="Texture" id=6]
+[ext_resource path="res://sprites/atlas_0001.sprites/actors/RLNEW2_092.tres" type="Texture" id=7]
+[ext_resource path="res://sprites/atlas_0001.sprites/actors/RLNEW2_093.tres" type="Texture" id=8]
+[ext_resource path="res://sprites/atlas_0001.sprites/actors/RLNEW2_090.tres" type="Texture" id=9]
+[ext_resource path="res://sprites/atlas_0001.sprites/actors/RLNEW2_091.tres" type="Texture" id=10]
+[ext_resource path="res://sprites/atlas_0001.sprites/actors/RLNEW2_095.tres" type="Texture" id=11]
+
+[node name="EnemyTile" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+TileName = "Enemy"
+m_textures = [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ]
+
+[node name="MainSprite" parent="." index="1"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" parent="." index="3"]
+collision_layer = 16

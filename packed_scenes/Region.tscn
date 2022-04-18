@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Region.cs" type="Script" id=1]
+[ext_resource path="res://packed_scenes/Chunk.tscn" type="PackedScene" id=2]
+
+[node name="Region" type="Node2D"]
+script = ExtResource( 1 )
+m_chunkPackedScene = ExtResource( 2 )
+
+[node name="Chunks" type="Node2D" parent="."]
+
+[node name="Center" type="Position2D" parent="."]
+position = Vector2( 2048, 2048 )
+__meta__ = {
+"_gizmo_extents_": 8.0
+}

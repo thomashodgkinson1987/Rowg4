@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/atlas_0001.sprites/pixels/white_pixel.tres" type="Texture" id=1]
+[ext_resource path="res://scripts/Tile.cs" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Tile" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BackgroundSprite" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 20, 20 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MainSprite" type="Sprite" parent="."]
+scale = Vector2( 20, 20 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ForegroundSprite" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 20, 20 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 10, 10 )
+collision_layer = 0
+collision_mask = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Center" type="Position2D" parent="."]
+visible = false
+position = Vector2( 10, 10 )
+__meta__ = {
+"_edit_lock_": true
+}

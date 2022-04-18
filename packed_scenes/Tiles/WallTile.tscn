@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://packed_scenes/Tiles/Tile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/atlas_0001.sprites/walls/RLNEW2_100.tres" type="Texture" id=2]
+[ext_resource path="res://scripts/WallTile.cs" type="Script" id=3]
+
+[node name="WallTile" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+TileName = "Wall"
+m_minColor = 0.8
+m_maxColor = 1.0
+
+[node name="MainSprite" parent="." index="1"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" parent="." index="3"]
+collision_layer = 8
