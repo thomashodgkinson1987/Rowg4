@@ -1,5 +1,6 @@
 ﻿using System;
 using Godot;
+using static DiceRoller;
 
 public class ActorTile : Tile
 {
@@ -8,8 +9,6 @@ public class ActorTile : Tile
 
     public int CurrentHealth => m_currentHealth;
     public int MaxHealth => m_maxHealth;
-
-    public int BaseAC => m_baseAC;
 
     public int BaseStrength => m_baseStrength;
     public int BaseDexterity => m_baseDexterity;
@@ -25,6 +24,15 @@ public class ActorTile : Tile
     public int BaseWisdomModifier => Mathf.FloorToInt((BaseWisdom - 10) / 2f);
     public int BaseCharismaModifier => Mathf.FloorToInt((BaseCharisma - 10) / 2f);
 
+    public int HitDiceCount => m_hitDiceCount;
+    public EDiceType HitDice => m_hitDice;
+
+    public int ArmorClass => 10 + /* armor bonus + shield bonus + */ BaseDexterityModifier /* + other modifiers */;
+
+    public int BaseAttackBonus => m_baseAttackBonus;
+    public int MeleeAttackBonus => BaseAttackBonus + BaseStrengthModifier /* + size modifier */;
+    //public int RangedAttackBonus => BaseAttackBonus + BaseDexterityModifier /* + size modifier + range penalty */;
+
     #endregion // Properties
 
 
@@ -34,8 +42,6 @@ public class ActorTile : Tile
     [Export] private int m_currentHealth = 10;
     [Export] private int m_maxHealth = 10;
 
-    [Export] private int m_baseAC = 10;
-
     [Export] private int m_baseStrength = 10;
     [Export] private int m_baseDexterity = 10;
     [Export] private int m_baseConstitution = 10;
@@ -43,7 +49,12 @@ public class ActorTile : Tile
     [Export] private int m_baseWisdom = 10;
     [Export] private int m_baseCharisma = 10;
 
-    private readonly Random m_rng;
+    [Export] private int m_hitDiceCount = 1;
+    [Export] private EDiceType m_hitDice = EDiceType.D10;
+
+    [Export] private int m_baseAttackBonus = 1;
+
+    protected readonly Random m_rng;
 
     #endregion // Fields
 
@@ -98,6 +109,42 @@ public class ActorTile : Tile
     public void DecreaseHealth (int amount)
     {
         SetHealth(CurrentHealth - amount);
+    }
+
+    public void SetBaseStrength (int baseStrength)
+    {
+        m_baseStrength = baseStrength;
+    }
+    public void SetBaseDexterity (int baseDexterity)
+    {
+        m_baseDexterity = baseDexterity;
+    }
+    public void SetBaseConstitution (int baseConstitution)
+    {
+        m_baseConstitution = baseConstitution;
+    }
+    public void SetBaseIntelligence (int baseIntelligence)
+    {
+        m_baseIntelligence = baseIntelligence;
+    }
+    public void SetBaseWisdom (int baseWisdom)
+    {
+        m_baseWisdom = baseWisdom;
+    }
+    public void SetBaseCharisma (int baseCharisma)
+    {
+        m_baseCharisma = baseCharisma;
+    }
+
+    public void SetBaseAttackBonus (int baseAttackBonus)
+    {
+        m_baseAttackBonus = baseAttackBonus;
+    }
+
+    public void SetHitDice (int count, EDiceType diceType)
+    {
+        m_hitDiceCount = count;
+        m_hitDice = diceType;
     }
 
     #endregion // Public methods

@@ -29,7 +29,7 @@ public class MainScene : Node2D
     private Label node_charismaValueLabel;
     private Label node_charismaModifierValueLabel;
 
-    private Label node_ACValueLabel;
+    private Label node_armorClassValueLabel;
 
     #endregion // Nodes
 
@@ -87,7 +87,7 @@ public class MainScene : Node2D
         node_charismaValueLabel = rightControl.GetNode<Label>("Panel/CharismaValueLabel");
         node_charismaModifierValueLabel = rightControl.GetNode<Label>("Panel/CharismaModifierValueLabel");
 
-        node_ACValueLabel = rightControl.GetNode<Label>("Panel/ACValueLabel");
+        node_armorClassValueLabel = rightControl.GetNode<Label>("Panel/ACValueLabel");
     }
 
     public override void _Ready ()
@@ -95,11 +95,23 @@ public class MainScene : Node2D
         m_currentLevel = m_levelPackedScene.Instance<Level>();
         node_viewport.AddChild(m_currentLevel);
 
-        m_currentLevel.Connect(nameof(Level.PlayerHitEnemySignal), this, nameof(OnPlayerHitEnemy));
-        m_currentLevel.Connect(nameof(Level.PlayerKilledEnemySignal), this, nameof(OnPlayerKilledEnemy));
-        m_currentLevel.Connect(nameof(Level.EnemyHitPlayerSignal), this, nameof(OnEnemyHitPlayer));
-        m_currentLevel.Connect(nameof(Level.EnemyKilledPlayerSignal), this, nameof(OnEnemyKilledPlayer));
+        m_currentLevel.Connect(nameof(Level.PlayerStatsChangedSignal), this, nameof(OnPlayerStatsChanged));
         m_currentLevel.Connect(nameof(Level.PlayerWalkedIntoWallSignal), this, nameof(OnPlayerWalkedIntoWall));
+
+        m_currentLevel.Connect(nameof(Level.PlayerRolledAttackAgainstEnemySignal), this, nameof(OnPlayerRolledAttackAgainstEnemy));
+        m_currentLevel.Connect(nameof(Level.PlayerHitEnemySignal), this, nameof(OnPlayerHitEnemy));
+        m_currentLevel.Connect(nameof(Level.PlayerMissedEnemySignal), this, nameof(OnPlayerMissedEnemy));
+        m_currentLevel.Connect(nameof(Level.PlayerRolledDamageAgainstEnemySignal), this, nameof(OnPlayerRolledDamageAgainstEnemy));
+        m_currentLevel.Connect(nameof(Level.PlayerDamagedEnemySignal), this, nameof(OnPlayerDamagedEnemy));
+        m_currentLevel.Connect(nameof(Level.PlayerKilledEnemySignal), this, nameof(OnPlayerKilledEnemy));
+
+        m_currentLevel.Connect(nameof(Level.EnemyRolledAttackAgainstPlayerSignal), this, nameof(OnEnemyRolledAttackAgainstPlayer));
+        m_currentLevel.Connect(nameof(Level.EnemyHitPlayerSignal), this, nameof(OnEnemyHitPlayer));
+        m_currentLevel.Connect(nameof(Level.EnemyMissedPlayerSignal), this, nameof(OnEnemyMissedPlayer));
+        m_currentLevel.Connect(nameof(Level.EnemyRolledDamageAgainstPlayerSignal), this, nameof(OnEnemyRolledDamageAgainstPlayer));
+        m_currentLevel.Connect(nameof(Level.EnemyDamagedPlayerSignal), this, nameof(OnEnemyDamagedPlayer));
+        m_currentLevel.Connect(nameof(Level.EnemyKilledPlayerSignal), this, nameof(OnEnemyKilledPlayer));
+
         m_currentLevel.Connect(nameof(Level.EnemyCameIntoViewSignal), this, nameof(OnEnemyCameIntoView));
         m_currentLevel.Connect(nameof(Level.EnemyWentOutOfViewSignal), this, nameof(OnEnemyWentOutOfView));
     }
@@ -111,7 +123,9 @@ public class MainScene : Node2D
             uint scancode = inputEventKey.Scancode;
 
             if (node_introMessageLabel.Visible)
+            {
                 node_introMessageLabel.Visible = false;
+            }
         }
     }
 
@@ -133,14 +147,70 @@ public class MainScene : Node2D
 
     #region Callback methods
 
-    private void UpdatePlayerUI (PlayerTile playerTile)
+    private void OnPlayerStatsChanged (PlayerTile playerTile)
     {
+        node_healthValueLabel.Text = playerTile.CurrentHealth.ToString();
+        node_maxHealthValueLabel.Text = playerTile.MaxHealth.ToString();
 
+        node_strengthValueLabel.Text = playerTile.BaseStrength.ToString();
+        node_strengthModifierValueLabel.Text = playerTile.BaseStrengthModifier.ToString();
+        node_dexterityValueLabel.Text = playerTile.BaseDexterity.ToString();
+        node_dexterityModifierValueLabel.Text = playerTile.BaseDexterityModifier.ToString();
+        node_constitutionValueLabel.Text = playerTile.BaseConstitution.ToString();
+        node_constitutionModifierValueLabel.Text = playerTile.BaseConstitutionModifier.ToString();
+        node_intelligenceValueLabel.Text = playerTile.BaseIntelligence.ToString();
+        node_intelligenceModifierValueLabel.Text = playerTile.BaseIntelligenceModifier.ToString();
+        node_wisdomValueLabel.Text = playerTile.BaseWisdom.ToString();
+        node_wisdomModifierValueLabel.Text = playerTile.BaseWisdomModifier.ToString();
+        node_charismaValueLabel.Text = playerTile.BaseCharisma.ToString();
+        node_charismaModifierValueLabel.Text = playerTile.BaseCharismaModifier.ToString();
+
+        node_armorClassValueLabel.Text = playerTile.ArmorClass.ToString();
     }
 
-    private void OnPlayerHitEnemy (PlayerTile playerTile, EnemyTile enemyTile, int damage)
+    private void OnPlayerWalkedIntoWall (PlayerTile playerTile, WallTile wallTile)
     {
-        string message = $"\n[color=blue]{playerTile.TileName}[/color] hit [color=red]{enemyTile.TileName}[/color] for [color=yellow]{damage}[/color] damage";
+        string message = $"\n[color=blue]{playerTile.TileName}[/color] walked in to [color=gray]{wallTile.TileName}[/color]";
+        AddMessage(message);
+    }
+
+    private void OnPlayerRolledAttackAgainstEnemy (PlayerTile playerTile, EnemyTile enemyTile, List<int> attackRollResults, int attackRollTotal)
+    {
+        string message = $"\n[color=blue]{playerTile.TileName}[/color] rolled attack against [color=red]{enemyTile.TileName}[/color] [color=purple](";
+        for (int i = 0; i < attackRollResults.Count; i++)
+        {
+            message += $"{attackRollResults[i]}";
+            if (i < attackRollResults.Count - 1)
+                message += " + ";
+        }
+        message += $" = {attackRollTotal})[/color]";
+        AddMessage(message);
+    }
+    private void OnPlayerHitEnemy (PlayerTile playerTile, EnemyTile enemyTile, int attackRollTotal)
+    {
+        string message = $"\n[color=blue]{playerTile.TileName}[/color] hit [color=red]{enemyTile.TileName}[/color] ([color=yellow]{attackRollTotal} vs {enemyTile.ArmorClass}[/color])";
+        AddMessage(message);
+    }
+    private void OnPlayerMissedEnemy (PlayerTile playerTile, EnemyTile enemyTile, int attackRollTotal)
+    {
+        string message = $"\n[color=blue]{playerTile.TileName}[/color] missed [color=red]{enemyTile.TileName}[/color] ([color=yellow]{attackRollTotal} vs {enemyTile.ArmorClass}[/color])";
+        AddMessage(message);
+    }
+    private void OnPlayerRolledDamageAgainstEnemy (PlayerTile playerTile, EnemyTile enemyTile, List<int> damageRollResults, int damageRollTotal)
+    {
+        string message = $"\n[color=blue]{playerTile.TileName}[/color] rolled damage against [color=red]{enemyTile.TileName}[/color] [color=purple](";
+        for (int i = 0; i < damageRollResults.Count; i++)
+        {
+            message += $"{damageRollResults[i]}";
+            if (i < damageRollResults.Count - 1)
+                message += " + ";
+        }
+        message += $" = {damageRollTotal})[/color]";
+        AddMessage(message);
+    }
+    private void OnPlayerDamagedEnemy (PlayerTile playerTile, EnemyTile enemyTile, int damageRollTotal)
+    {
+        string message = $"\n[color=blue]{playerTile.TileName}[/color] damaged [color=red]{enemyTile.TileName}[/color] [color=yellow]({damageRollTotal})[/color]";
         AddMessage(message);
     }
     private void OnPlayerKilledEnemy (PlayerTile playerTile, EnemyTile enemyTile)
@@ -148,31 +218,61 @@ public class MainScene : Node2D
         string message = $"\n[color=blue]{playerTile.TileName}[/color] killed [color=red]{enemyTile.TileName}[/color]";
         AddMessage(message);
     }
-    private void OnEnemyHitPlayer (EnemyTile enemyTile, PlayerTile playerTile, int damage)
+
+    private void OnEnemyRolledAttackAgainstPlayer (PlayerTile playerTile, EnemyTile enemyTile, List<int> attackRollResults, int attackRollTotal)
     {
-        string message = $"\n[color=red]{enemyTile.TileName}[/color] hit [color=blue]{playerTile.TileName}[/color] for [color=yellow]{damage}[/color] damage";
+        string message = $"\n[color=red]{enemyTile.TileName}[/color] rolled attack against [color=blue]{playerTile.TileName}[/color] [color=purple](";
+        for (int i = 0; i < attackRollResults.Count; i++)
+        {
+            message += $"{attackRollResults[i]}";
+            if (i < attackRollResults.Count - 1)
+                message += " + ";
+        }
+        message += $" = {attackRollTotal})[/color]";
+        AddMessage(message);
+    }
+    private void OnEnemyHitPlayer (PlayerTile playerTile, EnemyTile enemyTile, int attackRollTotal)
+    {
+        string message = $"\n[color=red]{enemyTile.TileName}[/color] hit [color=blue]{playerTile.TileName}[/color] ([color=yellow]{attackRollTotal} vs {playerTile.ArmorClass}[/color])";
+        AddMessage(message);
+    }
+    private void OnEnemyMissedPlayer (PlayerTile playerTile, EnemyTile enemyTile, int attackRollTotal)
+    {
+        string message = $"\n[color=red]{enemyTile.TileName}[/color] missed [color=blue]{playerTile.TileName}[/color] ([color=yellow]{attackRollTotal} vs {playerTile.ArmorClass}[/color])";
+        AddMessage(message);
+    }
+    private void OnEnemyRolledDamageAgainstPlayer (PlayerTile playerTile, EnemyTile enemyTile, List<int> damageRollResults, int damageRollTotal)
+    {
+        string message = $"\n[color=red]{enemyTile.TileName}[/color] rolled damage against [color=blue]{playerTile.TileName}[/color] [color=purple](";
+        for (int i = 0; i < damageRollResults.Count; i++)
+        {
+            message += $"{damageRollResults[i]}";
+            if (i < damageRollResults.Count - 1)
+                message += " + ";
+        }
+        message += $" = {damageRollTotal})[/color]";
+        AddMessage(message);
+    }
+    private void OnEnemyDamagedPlayer (PlayerTile playerTile, EnemyTile enemyTile, int damageRollTotal)
+    {
+        string message = $"\n[color=red]{enemyTile.TileName}[/color] damaged [color=blue]{playerTile.TileName}[/color] [color=yellow]({damageRollTotal})[/color]";
         AddMessage(message);
 
-        node_healthValueLabel.Text = playerTile.Health.ToString();
+        node_healthValueLabel.Text = playerTile.CurrentHealth.ToString();
     }
-    private void OnEnemyKilledPlayer (EnemyTile enemyTile, PlayerTile playerTile)
+    private void OnEnemyKilledPlayer (PlayerTile playerTile, EnemyTile enemyTile)
     {
         string message = $"\n[color=red]{enemyTile.TileName}[/color] killed [color=blue]{playerTile.TileName}[/color]";
         message += "\nPress the R key to restart";
         AddMessage(message);
     }
-    private void OnPlayerWalkedIntoWall (PlayerTile playerTile, WallTile wallTile)
-    {
-        string message = $"\n[color=blue]{playerTile.TileName}[/color] walked in to [color=gray]{wallTile.TileName}[/color]";
-        AddMessage(message);
-    }
+
 
     private void OnEnemyCameIntoView (EnemyTile enemyTile)
     {
         string message = $"\n[color=red]{enemyTile.TileName}[/color] came into view";
         AddMessage(message);
     }
-
     private void OnEnemyWentOutOfView (EnemyTile enemyTile)
     {
         string message = $"\n[color=red]{enemyTile.TileName}[/color] went out of view";

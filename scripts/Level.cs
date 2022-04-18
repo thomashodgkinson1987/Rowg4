@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using static DiceRoller;
 
 public class Level : Node2D
 {
@@ -26,11 +27,23 @@ public class Level : Node2D
 
     #region Signals
 
-    [Signal] public delegate void PlayerHitEnemySignal (PlayerTile playerTile, EnemyTile enemyTile, int damage);
-    [Signal] public delegate void PlayerKilledEnemySignal (PlayerTile playerTile, EnemyTile enemyTile);
-    [Signal] public delegate void EnemyHitPlayerSignal (EnemyTile enemyTile, PlayerTile playerTile, int damage);
-    [Signal] public delegate void EnemyKilledPlayerSignal (EnemyTile enemyTile, PlayerTile playerTile);
+    [Signal] public delegate void PlayerStatsChangedSignal (PlayerTile playerTile);
     [Signal] public delegate void PlayerWalkedIntoWallSignal (PlayerTile playerTile, WallTile wallTile);
+
+    [Signal] public delegate void PlayerRolledAttackAgainstEnemySignal (PlayerTile playerTile, EnemyTile enemyTile, List<int> attackRollResults, int attackRollTotal);
+    [Signal] public delegate void PlayerHitEnemySignal (PlayerTile playerTile, EnemyTile enemyTile, int attackRollTotal);
+    [Signal] public delegate void PlayerMissedEnemySignal (PlayerTile playerTile, EnemyTile enemyTile, int attackRollTotal);
+    [Signal] public delegate void PlayerRolledDamageAgainstEnemySignal (PlayerTile playerTile, EnemyTile enemyTile, List<int> damageRollResults, int damageRollTotal);
+    [Signal] public delegate void PlayerDamagedEnemySignal (PlayerTile playerTile, EnemyTile enemyTile, int damageRollTotal);
+    [Signal] public delegate void PlayerKilledEnemySignal (PlayerTile playerTile, EnemyTile enemyTile);
+
+    [Signal] public delegate void EnemyRolledAttackAgainstPlayerSignal (PlayerTile playerTile, EnemyTile enemyTile, List<int> attackRollResults, int attackRollTotal);
+    [Signal] public delegate void EnemyHitPlayerSignal (PlayerTile playerTile, EnemyTile enemyTile, int attackRollTotal);
+    [Signal] public delegate void EnemyMissedPlayerSignal (PlayerTile playerTile, EnemyTile enemyTile, int attackRollTotal);
+    [Signal] public delegate void EnemyRolledDamageAgainstPlayerSignal (PlayerTile playerTile, EnemyTile enemyTile, List<int> damageRollResults, int damageRollTotal);
+    [Signal] public delegate void EnemyDamagedPlayerSignal (PlayerTile playerTile, EnemyTile enemyTile, int damageRollTotal);
+    [Signal] public delegate void EnemyKilledPlayerSignal (PlayerTile playerTile, EnemyTile enemyTile);
+
     [Signal] public delegate void EnemyCameIntoViewSignal (EnemyTile enemyTile);
     [Signal] public delegate void EnemyWentOutOfViewSignal (EnemyTile enemyTile);
 
@@ -56,27 +69,28 @@ public class Level : Node2D
     #region Fields
 
     private readonly Random m_rng;
+    private readonly DiceRoller m_diceRoller;
 
     private FloorTile[,] m_floorTileMap;
-    private Tile[,] m_itemTileMap;
+    private ItemTile[,] m_itemTileMap;
     private WallTile[,] m_wallTileMap;
     private EnemyTile[,] m_enemyTileMap;
     private PlayerTile[,] m_playerTileMap;
 
     private readonly List<FloorTile> m_floorTiles;
-    private readonly List<Tile> m_itemTiles;
+    private readonly List<ItemTile> m_itemTiles;
     private readonly List<WallTile> m_wallTiles;
     private readonly List<EnemyTile> m_enemyTiles;
     private readonly List<Tile> m_allTiles;
 
     private readonly List<FloorTile> m_floorTilesInPlayerSightRange;
-    private readonly List<Tile> m_itemTilesInPlayerSightRange;
+    private readonly List<ItemTile> m_itemTilesInPlayerSightRange;
     private readonly List<WallTile> m_wallTilesInPlayerSightRange;
     private readonly List<EnemyTile> m_enemyTilesInPlayerSightRange;
     private readonly List<Tile> m_allTilesInPlayerSightRange;
 
     private readonly List<FloorTile> m_visibleFloorTiles;
-    private readonly List<Tile> m_visibleItemTiles;
+    private readonly List<ItemTile> m_visibleItemTiles;
     private readonly List<WallTile> m_visibleWallTiles;
     private readonly List<EnemyTile> m_visibleEnemyTiles;
     private readonly List<Tile> m_allVisibleTiles;
@@ -93,27 +107,28 @@ public class Level : Node2D
     public Level ()
     {
         m_rng = new Random();
+        m_diceRoller = new DiceRoller();
 
         m_floorTileMap = new FloorTile[LevelHeight, LevelWidth];
-        m_itemTileMap = new Tile[LevelHeight, LevelWidth];
+        m_itemTileMap = new ItemTile[LevelHeight, LevelWidth];
         m_wallTileMap = new WallTile[LevelHeight, LevelWidth];
         m_enemyTileMap = new EnemyTile[LevelHeight, LevelWidth];
         m_playerTileMap = new PlayerTile[LevelHeight, LevelWidth];
 
         m_floorTiles = new List<FloorTile>();
-        m_itemTiles = new List<Tile>();
+        m_itemTiles = new List<ItemTile>();
         m_wallTiles = new List<WallTile>();
         m_enemyTiles = new List<EnemyTile>();
         m_allTiles = new List<Tile>();
 
         m_floorTilesInPlayerSightRange = new List<FloorTile>();
-        m_itemTilesInPlayerSightRange = new List<Tile>();
+        m_itemTilesInPlayerSightRange = new List<ItemTile>();
         m_wallTilesInPlayerSightRange = new List<WallTile>();
         m_enemyTilesInPlayerSightRange = new List<EnemyTile>();
         m_allTilesInPlayerSightRange = new List<Tile>();
 
         m_visibleFloorTiles = new List<FloorTile>();
-        m_visibleItemTiles = new List<Tile>();
+        m_visibleItemTiles = new List<ItemTile>();
         m_visibleWallTiles = new List<WallTile>();
         m_visibleEnemyTiles = new List<EnemyTile>();
         m_allVisibleTiles = new List<Tile>();
@@ -167,7 +182,7 @@ public class Level : Node2D
         }
         foreach (Node node in node_itemTiles.GetChildren())
         {
-            if (node is Tile tile)
+            if (node is ItemTile tile)
             {
                 m_itemTiles.Add(tile);
                 m_unseenTiles.Add(tile);
@@ -211,7 +226,19 @@ public class Level : Node2D
                     furthestTilePositionRight = tileX;
                 if (tileY > furthestTilePositionDown)
                     furthestTilePositionDown = tileY;
-                int health = m_rng.Next(1, 5);
+
+                tile.SetBaseStrength(m_rng.Next(5, 11));
+                tile.SetBaseDexterity(m_rng.Next(5, 11));
+                tile.SetBaseConstitution(m_rng.Next(5, 11));
+                tile.SetBaseIntelligence(m_rng.Next(5, 11));
+                tile.SetBaseWisdom(m_rng.Next(5, 11));
+                tile.SetBaseCharisma(m_rng.Next(5, 11));
+
+                EDiceType[] diceTypes = new EDiceType[] { EDiceType.D4, EDiceType.D6, EDiceType.D8 };
+                int diceTypeIndex = m_rng.Next(diceTypes.Length);
+                tile.SetHitDice(1, diceTypes[diceTypeIndex]);
+
+                int health = (int)diceTypes[diceTypeIndex] + tile.BaseConstitutionModifier;
                 tile.SetHealth(health, health);
             }
         }
@@ -228,7 +255,7 @@ public class Level : Node2D
         LevelHeight = furthestTilePositionDown + 1;
 
         m_floorTileMap = new FloorTile[LevelHeight, LevelWidth];
-        m_itemTileMap = new Tile[LevelHeight, LevelWidth];
+        m_itemTileMap = new ItemTile[LevelHeight, LevelWidth];
         m_wallTileMap = new WallTile[LevelHeight, LevelWidth];
         m_enemyTileMap = new EnemyTile[LevelHeight, LevelWidth];
         m_playerTileMap = new PlayerTile[LevelHeight, LevelWidth];
@@ -242,7 +269,7 @@ public class Level : Node2D
         }
         for (int i = 0; i < m_itemTiles.Count; i++)
         {
-            Tile tile = m_itemTiles[i];
+            ItemTile tile = m_itemTiles[i];
             int tileX = Mathf.FloorToInt(tile.Position.x / TileWidth);
             int tileY = Mathf.FloorToInt(tile.Position.y / TileHeight);
             m_itemTileMap[tileY, tileX] = tile;
@@ -263,6 +290,22 @@ public class Level : Node2D
         }
 
         m_playerTileMap[playerY, playerX] = node_playerTile;
+
+        node_playerTile.SetBaseStrength(m_rng.Next(8, 19));
+        node_playerTile.SetBaseDexterity(m_rng.Next(8, 19));
+        node_playerTile.SetBaseConstitution(m_rng.Next(8, 19));
+        node_playerTile.SetBaseIntelligence(m_rng.Next(8, 19));
+        node_playerTile.SetBaseWisdom(m_rng.Next(8, 19));
+        node_playerTile.SetBaseCharisma(m_rng.Next(8, 19));
+
+        {
+            EDiceType[] diceTypes = new EDiceType[] { EDiceType.D8, EDiceType.D10, EDiceType.D12 };
+            int diceTypeIndex = m_rng.Next(diceTypes.Length);
+            node_playerTile.SetHitDice(1, diceTypes[diceTypeIndex]);
+
+            int health = (int)diceTypes[diceTypeIndex] + node_playerTile.BaseConstitutionModifier;
+            node_playerTile.SetHealth(health, health);
+        }
 
         node_grid.SetGridSize(LevelWidth, LevelHeight);
         node_grid.SetGridCellSize(TileWidth, TileHeight);
@@ -326,7 +369,7 @@ public class Level : Node2D
             {
                 GetTree().ReloadCurrentScene();
             }
-            else if (node_playerTile.Health > 0)
+            else if (node_playerTile.CurrentHealth > 0)
             {
                 {
                     int dx = 0;
@@ -374,25 +417,48 @@ public class Level : Node2D
                             {
                                 EnemyTile enemyTile = m_enemyTileMap[nextY, nextX];
 
-                                enemyTile.DecreaseHealth(1);
+                                (List<int> attackRollResults, int attackRollTotal) = m_diceRoller
+                                    .Add(1, EDiceType.D20)
+                                    .Add(1, node_playerTile.MeleeAttackBonus)
+                                    .Roll();
 
-                                EmitSignal(nameof(PlayerHitEnemySignal), node_playerTile, enemyTile, 1);
+                                EmitSignal(nameof(PlayerRolledAttackAgainstEnemySignal), node_playerTile, enemyTile, attackRollResults, attackRollTotal);
 
-                                if (enemyTile.Health == 0)
+                                if (attackRollTotal >= enemyTile.ArmorClass)
                                 {
-                                    EmitSignal(nameof(PlayerKilledEnemySignal), node_playerTile, enemyTile);
+                                    EmitSignal(nameof(PlayerHitEnemySignal), node_playerTile, enemyTile, attackRollTotal);
 
-                                    m_enemyTileMap[nextY, nextX] = null;
-                                    m_enemyTiles.Remove(enemyTile);
-                                    m_allTiles.Remove(enemyTile);
-                                    m_enemyTilesInPlayerSightRange.Remove(enemyTile);
-                                    m_allTilesInPlayerSightRange.Remove(enemyTile);
-                                    m_visibleEnemyTiles.Remove(enemyTile);
-                                    m_allVisibleTiles.Remove(enemyTile);
-                                    m_seenTiles.Remove(enemyTile);
-                                    m_unseenTiles.Remove(enemyTile);
-                                    node_enemyTiles.RemoveChild(enemyTile);
-                                    enemyTile.QueueFree();
+                                    (List<int> damageRollResults, int damageRollTotal) = m_diceRoller
+                                        .Add(1, EDiceType.D20)
+                                        .Add(1, node_playerTile.BaseStrengthModifier)
+                                        .Roll();
+
+                                    EmitSignal(nameof(PlayerRolledDamageAgainstEnemySignal), node_playerTile, enemyTile, damageRollResults, damageRollTotal);
+
+                                    enemyTile.DecreaseHealth(damageRollTotal);
+
+                                    EmitSignal(nameof(PlayerDamagedEnemySignal), node_playerTile, enemyTile, damageRollTotal);
+
+                                    if (enemyTile.CurrentHealth == 0)
+                                    {
+                                        EmitSignal(nameof(PlayerKilledEnemySignal), node_playerTile, enemyTile);
+
+                                        m_enemyTileMap[nextY, nextX] = null;
+                                        m_enemyTiles.Remove(enemyTile);
+                                        m_allTiles.Remove(enemyTile);
+                                        m_enemyTilesInPlayerSightRange.Remove(enemyTile);
+                                        m_allTilesInPlayerSightRange.Remove(enemyTile);
+                                        m_visibleEnemyTiles.Remove(enemyTile);
+                                        m_allVisibleTiles.Remove(enemyTile);
+                                        m_seenTiles.Remove(enemyTile);
+                                        m_unseenTiles.Remove(enemyTile);
+                                        node_enemyTiles.RemoveChild(enemyTile);
+                                        enemyTile.QueueFree();
+                                    }
+                                }
+                                else
+                                {
+                                    EmitSignal(nameof(PlayerMissedEnemySignal), node_playerTile, enemyTile, attackRollTotal);
                                 }
                             }
                             else if (m_floorTileMap[nextY, nextX] != null && m_wallTileMap[nextY, nextX] == null)
@@ -428,17 +494,37 @@ public class Level : Node2D
                         float minDist = Mathf.Sqrt((TileWidth * TileWidth) + (TileHeight * TileHeight));
                         if (enemyTile.GlobalCenter.DistanceTo(node_playerTile.GlobalCenter) <= minDist)
                         {
-                            enemyNextX = -1;
-                            enemyNextY = -1;
+                            (List<int> attackRollResults, int attackRollTotal) = m_diceRoller
+                                .Add(1, EDiceType.D20)
+                                .Add(1, enemyTile.MeleeAttackBonus)
+                                .Roll();
 
-                            node_playerTile.DecreaseHealth(1);
+                            EmitSignal(nameof(EnemyRolledAttackAgainstPlayerSignal), node_playerTile, enemyTile, attackRollResults, attackRollTotal);
 
-                            EmitSignal(nameof(EnemyHitPlayerSignal), enemyTile, node_playerTile, 1);
-
-                            if (node_playerTile.Health == 0)
+                            if (attackRollTotal >= node_playerTile.ArmorClass)
                             {
-                                EmitSignal(nameof(EnemyKilledPlayerSignal), enemyTile, node_playerTile);
-                                return;
+                                EmitSignal(nameof(EnemyHitPlayerSignal), node_playerTile, enemyTile, attackRollTotal);
+
+                                (List<int> damageRollResults, int damageRollTotal) = m_diceRoller
+                                    .Add(1, EDiceType.D20)
+                                    .Add(1, enemyTile.BaseStrengthModifier)
+                                    .Roll();
+
+                                EmitSignal(nameof(EnemyRolledDamageAgainstPlayerSignal), node_playerTile, enemyTile, damageRollResults, damageRollTotal);
+
+                                node_playerTile.DecreaseHealth(damageRollTotal);
+
+                                EmitSignal(nameof(EnemyDamagedPlayerSignal), node_playerTile, enemyTile, damageRollTotal);
+
+                                if (node_playerTile.CurrentHealth == 0)
+                                {
+                                    EmitSignal(nameof(EnemyKilledPlayerSignal), node_playerTile, enemyTile);
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                EmitSignal(nameof(EnemyMissedPlayerSignal), node_playerTile, enemyTile, attackRollTotal);
                             }
                         }
                         else
@@ -524,6 +610,7 @@ public class Level : Node2D
                 }
 
                 RayCasting();
+                EmitSignal(nameof(PlayerStatsChangedSignal), node_playerTile);
             }
         }
     }
@@ -641,7 +728,7 @@ public class Level : Node2D
         }
 
         List<FloorTile> previousVisibleFloorTiles = new List<FloorTile>(m_visibleFloorTiles);
-        List<Tile> previousVisibleItemTiles = new List<Tile>(m_visibleItemTiles);
+        List<ItemTile> previousVisibleItemTiles = new List<ItemTile>(m_visibleItemTiles);
         List<WallTile> previousVisibleWallTiles = new List<WallTile>(m_visibleWallTiles);
         List<EnemyTile> previousVisibleEnemyTiles = new List<EnemyTile>(m_visibleEnemyTiles);
         List<Tile> allPreviousVisibleTiles = new List<Tile>(m_allVisibleTiles);
@@ -675,7 +762,7 @@ public class Level : Node2D
                     }
                     if (m_itemTileMap[tileY, tileX] != null)
                     {
-                        Tile itemTile = m_itemTileMap[tileY, tileX];
+                        ItemTile itemTile = m_itemTileMap[tileY, tileX];
                         if (!m_visibleItemTiles.Contains(itemTile))
                             m_visibleItemTiles.Add(itemTile);
                         if (!m_allVisibleTiles.Contains(itemTile))
@@ -745,7 +832,7 @@ public class Level : Node2D
             }
         }
 
-        foreach (Tile itemTile in m_visibleItemTiles)
+        foreach (ItemTile itemTile in m_visibleItemTiles)
         {
             if (!previousVisibleItemTiles.Contains(itemTile))
             {
@@ -754,7 +841,7 @@ public class Level : Node2D
             }
         }
 
-        foreach (Tile itemTile in previousVisibleItemTiles)
+        foreach (ItemTile itemTile in previousVisibleItemTiles)
         {
             if (!m_visibleItemTiles.Contains(itemTile))
             {

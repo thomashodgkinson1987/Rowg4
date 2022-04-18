@@ -1,8 +1,11 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://fonts/AGoblinAppears-o2aV.ttf" type="DynamicFontData" id=1]
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+hinting = 0
+font_path = "res://fonts/pico-8.ttf"
 
 [resource]
-size = 7
+size = 6
 extra_spacing_char = 2
-font_data = ExtResource( 1 )
+font_data = SubResource( 1 )

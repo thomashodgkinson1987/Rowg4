@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Godot;
+﻿using Godot;
 
-public class PlayerTile : Tile
+public class PlayerTile : ActorTile
 {
 
     #region Nodes
@@ -18,9 +16,6 @@ public class PlayerTile : Tile
 
     #region Properties
 
-    public int Health => m_health;
-    public int MaxHealth => m_maxHealth;
-
     public int SightLength => m_sightLength;
 
     #endregion // Properties
@@ -29,12 +24,7 @@ public class PlayerTile : Tile
 
     #region Fields
 
-    [Export] private int m_health = 10;
-    [Export] private int m_maxHealth = 10;
-
     [Export] private int m_sightLength = 4;
-
-    private readonly Random m_rng;
 
     #endregion // Fields
 
@@ -42,9 +32,9 @@ public class PlayerTile : Tile
 
     #region Constructors
 
-    public PlayerTile ()
+    public PlayerTile () : base()
     {
-        m_rng = new Random();
+
     }
 
     #endregion // Constructors
@@ -83,38 +73,6 @@ public class PlayerTile : Tile
 
 
     #region Public methods
-
-    public void SetHealth (int health, int maxHealth)
-    {
-        maxHealth = Mathf.Max(1, maxHealth);
-        m_maxHealth = maxHealth;
-        if (Health > MaxHealth)
-            m_health = MaxHealth;
-
-        health = Mathf.Clamp(health, 0, MaxHealth);
-        m_health = health;
-    }
-    public void SetHealth (int health)
-    {
-        health = Mathf.Clamp(health, 0, MaxHealth);
-        m_health = health;
-    }
-    public void SetMaxHealth (int maxHealth)
-    {
-        maxHealth = Mathf.Max(1, maxHealth);
-        m_maxHealth = maxHealth;
-        if (Health > MaxHealth)
-            m_health = MaxHealth;
-    }
-
-    public void IncreaseHealth (int amount)
-    {
-        SetHealth(Health + amount);
-    }
-    public void DecreaseHealth (int amount)
-    {
-        SetHealth(Health - amount);
-    }
 
     public void SetSightLength (int length)
     {
