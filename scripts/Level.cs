@@ -146,6 +146,9 @@ public class Level : Node2D
 
     public override void _Ready ()
     {
+        int furthestTilePositionRight = 0;
+        int furthestTilePositionDown = 0;
+
         foreach (Node node in node_floorTiles.GetChildren())
         {
             if (node is FloorTile tile)
@@ -154,6 +157,12 @@ public class Level : Node2D
                 m_unseenTiles.Add(tile);
                 m_allTiles.Add(tile);
                 tile.SetMainSpriteVisible(false);
+                int tileX = Mathf.FloorToInt(tile.Position.x / TileWidth);
+                int tileY = Mathf.FloorToInt(tile.Position.y / TileHeight);
+                if (tileX > furthestTilePositionRight)
+                    furthestTilePositionRight = tileX;
+                if (tileY > furthestTilePositionDown)
+                    furthestTilePositionDown = tileY;
             }
         }
         foreach (Node node in node_itemTiles.GetChildren())
@@ -164,6 +173,12 @@ public class Level : Node2D
                 m_unseenTiles.Add(tile);
                 m_allTiles.Add(tile);
                 tile.SetMainSpriteVisible(false);
+                int tileX = Mathf.FloorToInt(tile.Position.x / TileWidth);
+                int tileY = Mathf.FloorToInt(tile.Position.y / TileHeight);
+                if (tileX > furthestTilePositionRight)
+                    furthestTilePositionRight = tileX;
+                if (tileY > furthestTilePositionDown)
+                    furthestTilePositionDown = tileY;
             }
         }
         foreach (Node node in node_wallTiles.GetChildren())
@@ -174,6 +189,12 @@ public class Level : Node2D
                 m_unseenTiles.Add(tile);
                 m_allTiles.Add(tile);
                 tile.SetMainSpriteVisible(false);
+                int tileX = Mathf.FloorToInt(tile.Position.x / TileWidth);
+                int tileY = Mathf.FloorToInt(tile.Position.y / TileHeight);
+                if (tileX > furthestTilePositionRight)
+                    furthestTilePositionRight = tileX;
+                if (tileY > furthestTilePositionDown)
+                    furthestTilePositionDown = tileY;
             }
         }
         foreach (Node node in node_enemyTiles.GetChildren())
@@ -184,6 +205,12 @@ public class Level : Node2D
                 m_unseenTiles.Add(tile);
                 m_allTiles.Add(tile);
                 tile.SetMainSpriteVisible(false);
+                int tileX = Mathf.FloorToInt(tile.Position.x / TileWidth);
+                int tileY = Mathf.FloorToInt(tile.Position.y / TileHeight);
+                if (tileX > furthestTilePositionRight)
+                    furthestTilePositionRight = tileX;
+                if (tileY > furthestTilePositionDown)
+                    furthestTilePositionDown = tileY;
                 int health = m_rng.Next(1, 5);
                 tile.SetHealth(health, health);
             }
@@ -191,20 +218,6 @@ public class Level : Node2D
 
         int playerX = Mathf.FloorToInt(node_playerTile.Position.x / TileWidth);
         int playerY = Mathf.FloorToInt(node_playerTile.Position.y / TileHeight);
-
-        int furthestTilePositionRight = 0;
-        int furthestTilePositionDown = 0;
-
-        foreach (Tile tile in m_allTiles)
-        {
-            int tileX = Mathf.FloorToInt(tile.Position.x / TileWidth);
-            int tileY = Mathf.FloorToInt(tile.Position.y / TileHeight);
-
-            if (tileX > furthestTilePositionRight)
-                furthestTilePositionRight = tileX;
-            if (tileY > furthestTilePositionDown)
-                furthestTilePositionDown = tileY;
-        }
 
         if (playerX > furthestTilePositionRight)
             furthestTilePositionRight = playerX;
@@ -381,18 +394,6 @@ public class Level : Node2D
                                     node_enemyTiles.RemoveChild(enemyTile);
                                     enemyTile.QueueFree();
                                 }
-                                else
-                                {
-                                    node_playerTile.DecreaseHealth(1);
-
-                                    EmitSignal(nameof(EnemyHitPlayerSignal), enemyTile, node_playerTile, 1);
-
-                                    if (node_playerTile.Health == 0)
-                                    {
-                                        EmitSignal(nameof(EnemyKilledPlayerSignal), enemyTile, node_playerTile);
-                                        return;
-                                    }
-                                }
                             }
                             else if (m_floorTileMap[nextY, nextX] != null && m_wallTileMap[nextY, nextX] == null)
                             {
@@ -412,25 +413,112 @@ public class Level : Node2D
 
                 for (int i = 0; i < m_enemyTiles.Count; i++)
                 {
-                    EnemyTile tile = m_enemyTiles[i];
-                    int tileX = Mathf.FloorToInt(tile.Position.x / TileWidth);
-                    int tileY = Mathf.FloorToInt(tile.Position.y / TileHeight);
-                    int dx = m_rng.Next(-1, 2);
-                    int dy = m_rng.Next(-1, 2);
-                    int nextX = tileX + dx;
-                    int nextY = tileY + dy;
+                    EnemyTile enemyTile = m_enemyTiles[i];
+                    int enemyTileX = Mathf.FloorToInt(enemyTile.Position.x / TileWidth);
+                    int enemyTileY = Mathf.FloorToInt(enemyTile.Position.y / TileHeight);
 
-                    if (nextX >= 0 && nextX < LevelWidth && nextY >= 0 && nextY < LevelHeight)
+                    int enemyDX = 0;
+                    int enemyDY = 0;
+
+                    int enemyNextX = enemyTileX;
+                    int enemyNextY = enemyTileY;
+
+                    if (m_visibleEnemyTiles.Contains(enemyTile))
                     {
-                        if (
-                            m_floorTileMap[nextY, nextX] != null &&
-                            m_wallTileMap[nextY, nextX] == null &&
-                            m_enemyTileMap[nextY, nextX] == null &&
-                            m_playerTileMap[nextY, nextX] == null)
+                        float minDist = Mathf.Sqrt((TileWidth * TileWidth) + (TileHeight * TileHeight));
+                        if (enemyTile.GlobalCenter.DistanceTo(node_playerTile.GlobalCenter) <= minDist)
                         {
-                            tile.Position = new Vector2(nextX * TileWidth, nextY * TileHeight);
-                            m_enemyTileMap[tileY, tileX] = null;
-                            m_enemyTileMap[nextY, nextX] = tile;
+                            enemyNextX = -1;
+                            enemyNextY = -1;
+
+                            node_playerTile.DecreaseHealth(1);
+
+                            EmitSignal(nameof(EnemyHitPlayerSignal), enemyTile, node_playerTile, 1);
+
+                            if (node_playerTile.Health == 0)
+                            {
+                                EmitSignal(nameof(EnemyKilledPlayerSignal), enemyTile, node_playerTile);
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            Vector2 difference = node_playerTile.GlobalCenter - enemyTile.GlobalCenter;
+                            float diffX = Mathf.Abs(difference.x);
+                            float diffY = Mathf.Abs(difference.y);
+                            if (diffX < diffY)
+                            {
+                                enemyDX = 0;
+                                enemyDY = Mathf.Sign(difference.y);
+                            }
+                            else if (diffX > diffY)
+                            {
+                                enemyDX = Mathf.Sign(difference.x);
+                                enemyDY = 0;
+                            }
+                            else
+                            {
+                                enemyDX = Mathf.Sign(difference.x);
+                                enemyDY = Mathf.Sign(difference.y);
+                            }
+
+                            enemyNextX = enemyTileX + enemyDX;
+                            enemyNextY = enemyTileY + enemyDY;
+
+                            if (enemyNextX >= 0 && enemyNextX < LevelWidth && enemyNextY >= 0 && enemyNextY < LevelHeight)
+                            {
+                                if (
+                                    m_floorTileMap[enemyNextY, enemyNextX] != null &&
+                                    m_wallTileMap[enemyNextY, enemyNextX] == null &&
+                                    m_enemyTileMap[enemyNextY, enemyNextX] == null)
+                                {
+                                    enemyTile.Position = new Vector2(enemyNextX * TileWidth, enemyNextY * TileHeight);
+                                    m_enemyTileMap[enemyTileY, enemyTileX] = null;
+                                    m_enemyTileMap[enemyNextY, enemyNextX] = enemyTile;
+                                }
+                                else
+                                {
+                                    enemyDX = Mathf.Sign(difference.x);
+                                    enemyDY = Mathf.Sign(difference.y);
+
+                                    enemyNextX = enemyTileX + enemyDX;
+                                    enemyNextY = enemyTileY + enemyDY;
+
+                                    if (enemyNextX >= 0 && enemyNextX < LevelWidth && enemyNextY >= 0 && enemyNextY < LevelHeight)
+                                    {
+                                        if (
+                                            m_floorTileMap[enemyNextY, enemyNextX] != null &&
+                                            m_wallTileMap[enemyNextY, enemyNextX] == null &&
+                                            m_enemyTileMap[enemyNextY, enemyNextX] == null)
+                                        {
+                                            enemyTile.Position = new Vector2(enemyNextX * TileWidth, enemyNextY * TileHeight);
+                                            m_enemyTileMap[enemyTileY, enemyTileX] = null;
+                                            m_enemyTileMap[enemyNextY, enemyNextX] = enemyTile;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        enemyDX = m_rng.Next(-1, 2);
+                        enemyDY = m_rng.Next(-1, 2);
+
+                        enemyNextX = enemyTileX + enemyDX;
+                        enemyNextY = enemyTileY + enemyDY;
+
+                        if (enemyNextX >= 0 && enemyNextX < LevelWidth && enemyNextY >= 0 && enemyNextY < LevelHeight)
+                        {
+                            if (
+                                m_floorTileMap[enemyNextY, enemyNextX] != null &&
+                                m_wallTileMap[enemyNextY, enemyNextX] == null &&
+                                m_enemyTileMap[enemyNextY, enemyNextX] == null)
+                            {
+                                enemyTile.Position = new Vector2(enemyNextX * TileWidth, enemyNextY * TileHeight);
+                                m_enemyTileMap[enemyTileY, enemyTileX] = null;
+                                m_enemyTileMap[enemyNextY, enemyNextX] = enemyTile;
+                            }
                         }
                     }
                 }
