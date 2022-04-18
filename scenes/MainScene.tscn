@@ -27,17 +27,17 @@ transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="Control" type="Control" parent="."]
+[node name="BottomControl" type="Control" parent="."]
 margin_top = 320.0
 margin_right = 320.0
 margin_bottom = 400.0
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="BottomControl"]
 margin_right = 320.0
 margin_bottom = 80.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel"]
+[node name="MessageLogLabel" type="RichTextLabel" parent="BottomControl/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -48,7 +48,7 @@ custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
 scroll_following = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Control/Panel"]
+[node name="IntroMessageLabel" type="RichTextLabel" parent="BottomControl/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -69,17 +69,17 @@ Team Bean 2022
 ~=----------=~"
 scroll_active = false
 
-[node name="Control2" type="Control" parent="."]
+[node name="RightControl" type="Control" parent="."]
 margin_left = 320.0
 margin_right = 480.0
 margin_bottom = 400.0
 
-[node name="Panel" type="Panel" parent="Control2"]
+[node name="Panel" type="Panel" parent="RightControl"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_styles/panel = SubResource( 3 )
 
-[node name="HealthTextLabel" type="Label" parent="Control2/Panel"]
+[node name="HealthTextLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 4.0
 margin_right = 40.0
 margin_bottom = 20.0
@@ -87,7 +87,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "HP"
 valign = 1
 
-[node name="HealthDividerLabel" type="Label" parent="Control2/Panel"]
+[node name="HealthDividerLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 40.0
 margin_right = 160.0
 margin_bottom = 20.0
@@ -96,7 +96,7 @@ text = "/"
 align = 1
 valign = 1
 
-[node name="HealthValueLabel" type="Label" parent="Control2/Panel"]
+[node name="HealthValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 40.0
 margin_right = 100.0
 margin_bottom = 20.0
@@ -105,7 +105,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="MaxHealthValueLabel" type="Label" parent="Control2/Panel"]
+[node name="MaxHealthValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 100.0
 margin_right = 160.0
 margin_bottom = 20.0
@@ -114,7 +114,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="StrengthTextLabel" type="Label" parent="Control2/Panel"]
+[node name="StrengthTextLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 4.0
 margin_top = 40.0
 margin_right = 40.0
@@ -123,7 +123,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Str"
 valign = 1
 
-[node name="StrengthValueLabel" type="Label" parent="Control2/Panel"]
+[node name="StrengthValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 40.0
 margin_top = 40.0
 margin_right = 100.0
@@ -133,7 +133,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="StrengthLeftBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="StrengthLeftBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 80.0
 margin_top = 40.0
 margin_right = 100.0
@@ -143,7 +143,7 @@ text = "("
 align = 1
 valign = 1
 
-[node name="StrengthPlusLabel" type="Label" parent="Control2/Panel"]
+[node name="StrengthPlusLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 100.0
 margin_top = 40.0
 margin_right = 120.0
@@ -153,7 +153,7 @@ text = "+"
 align = 1
 valign = 1
 
-[node name="StrengthModifierValueLabel" type="Label" parent="Control2/Panel"]
+[node name="StrengthModifierValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 120.0
 margin_top = 40.0
 margin_right = 140.0
@@ -163,7 +163,7 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="StrengthScoreRightBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="StrengthScoreRightBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 140.0
 margin_top = 40.0
 margin_right = 160.0
@@ -173,7 +173,7 @@ text = ")"
 align = 1
 valign = 1
 
-[node name="DexterityTextLabel" type="Label" parent="Control2/Panel"]
+[node name="DexterityTextLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 4.0
 margin_top = 60.0
 margin_right = 40.0
@@ -182,7 +182,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Dex"
 valign = 1
 
-[node name="DexterityValueLabel" type="Label" parent="Control2/Panel"]
+[node name="DexterityValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 40.0
 margin_top = 60.0
 margin_right = 100.0
@@ -192,7 +192,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="DexterityLeftBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="DexterityLeftBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 80.0
 margin_top = 60.0
 margin_right = 100.0
@@ -202,7 +202,7 @@ text = "("
 align = 1
 valign = 1
 
-[node name="DexterityPlusLabel" type="Label" parent="Control2/Panel"]
+[node name="DexterityPlusLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 100.0
 margin_top = 60.0
 margin_right = 120.0
@@ -212,7 +212,7 @@ text = "+"
 align = 1
 valign = 1
 
-[node name="DexterityModifierValueLabel" type="Label" parent="Control2/Panel"]
+[node name="DexterityModifierValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 120.0
 margin_top = 60.0
 margin_right = 140.0
@@ -222,7 +222,7 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="DexterityScoreRightBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="DexterityScoreRightBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 140.0
 margin_top = 60.0
 margin_right = 160.0
@@ -232,7 +232,7 @@ text = ")"
 align = 1
 valign = 1
 
-[node name="ConstitutionTextLabel" type="Label" parent="Control2/Panel"]
+[node name="ConstitutionTextLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 4.0
 margin_top = 80.0
 margin_right = 40.0
@@ -241,7 +241,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Con"
 valign = 1
 
-[node name="ConstitutionValueLabel" type="Label" parent="Control2/Panel"]
+[node name="ConstitutionValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 40.0
 margin_top = 80.0
 margin_right = 100.0
@@ -251,7 +251,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="ConstitutionLeftBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="ConstitutionLeftBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 80.0
 margin_top = 80.0
 margin_right = 100.0
@@ -261,7 +261,7 @@ text = "("
 align = 1
 valign = 1
 
-[node name="ConstitutionPlusLabel" type="Label" parent="Control2/Panel"]
+[node name="ConstitutionPlusLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 100.0
 margin_top = 80.0
 margin_right = 120.0
@@ -271,7 +271,7 @@ text = "+"
 align = 1
 valign = 1
 
-[node name="ConstitutionModifierValueLabel" type="Label" parent="Control2/Panel"]
+[node name="ConstitutionModifierValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 120.0
 margin_top = 80.0
 margin_right = 140.0
@@ -281,7 +281,7 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="ConstitutionRightBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="ConstitutionRightBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 140.0
 margin_top = 80.0
 margin_right = 160.0
@@ -291,7 +291,7 @@ text = ")"
 align = 1
 valign = 1
 
-[node name="IntelligenceTextLabel" type="Label" parent="Control2/Panel"]
+[node name="IntelligenceTextLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 4.0
 margin_top = 100.0
 margin_right = 40.0
@@ -300,7 +300,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Int"
 valign = 1
 
-[node name="IntelligenceValueLabel" type="Label" parent="Control2/Panel"]
+[node name="IntelligenceValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 40.0
 margin_top = 100.0
 margin_right = 100.0
@@ -310,7 +310,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="IntelligenceLeftBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="IntelligenceLeftBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 80.0
 margin_top = 100.0
 margin_right = 100.0
@@ -320,7 +320,7 @@ text = "("
 align = 1
 valign = 1
 
-[node name="IntelligencePlusLabel" type="Label" parent="Control2/Panel"]
+[node name="IntelligencePlusLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 100.0
 margin_top = 100.0
 margin_right = 120.0
@@ -330,7 +330,7 @@ text = "+"
 align = 1
 valign = 1
 
-[node name="IntelligenceModifierValueLabel" type="Label" parent="Control2/Panel"]
+[node name="IntelligenceModifierValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 120.0
 margin_top = 100.0
 margin_right = 140.0
@@ -340,7 +340,7 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="IntelligenceRightBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="IntelligenceRightBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 140.0
 margin_top = 100.0
 margin_right = 160.0
@@ -350,7 +350,7 @@ text = ")"
 align = 1
 valign = 1
 
-[node name="WisdomTextLabel" type="Label" parent="Control2/Panel"]
+[node name="WisdomTextLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 4.0
 margin_top = 120.0
 margin_right = 40.0
@@ -359,7 +359,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Wis"
 valign = 1
 
-[node name="WisdomValueLabel" type="Label" parent="Control2/Panel"]
+[node name="WisdomValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 40.0
 margin_top = 120.0
 margin_right = 100.0
@@ -369,7 +369,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="WisdomLeftBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="WisdomLeftBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 80.0
 margin_top = 120.0
 margin_right = 100.0
@@ -379,7 +379,7 @@ text = "("
 align = 1
 valign = 1
 
-[node name="WisdomPlusLabel" type="Label" parent="Control2/Panel"]
+[node name="WisdomPlusLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 100.0
 margin_top = 120.0
 margin_right = 120.0
@@ -389,7 +389,7 @@ text = "+"
 align = 1
 valign = 1
 
-[node name="WisdomModifierValueLabel" type="Label" parent="Control2/Panel"]
+[node name="WisdomModifierValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 120.0
 margin_top = 120.0
 margin_right = 140.0
@@ -399,7 +399,7 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="WisdomRightBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="WisdomRightBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 140.0
 margin_top = 120.0
 margin_right = 160.0
@@ -409,7 +409,7 @@ text = ")"
 align = 1
 valign = 1
 
-[node name="CharismaTextLabel" type="Label" parent="Control2/Panel"]
+[node name="CharismaTextLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 4.0
 margin_top = 140.0
 margin_right = 40.0
@@ -418,7 +418,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "Cha"
 valign = 1
 
-[node name="CharismaValueLabel" type="Label" parent="Control2/Panel"]
+[node name="CharismaValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 40.0
 margin_top = 140.0
 margin_right = 100.0
@@ -428,7 +428,7 @@ text = "10"
 align = 1
 valign = 1
 
-[node name="CharismaLeftBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="CharismaLeftBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 80.0
 margin_top = 140.0
 margin_right = 100.0
@@ -438,7 +438,7 @@ text = "("
 align = 1
 valign = 1
 
-[node name="CharismaPlusLabel" type="Label" parent="Control2/Panel"]
+[node name="CharismaPlusLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 100.0
 margin_top = 140.0
 margin_right = 120.0
@@ -448,7 +448,7 @@ text = "+"
 align = 1
 valign = 1
 
-[node name="CharismaModifierValueLabel" type="Label" parent="Control2/Panel"]
+[node name="CharismaModifierValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 120.0
 margin_top = 140.0
 margin_right = 140.0
@@ -458,7 +458,7 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="CharismaRightBracketLabel" type="Label" parent="Control2/Panel"]
+[node name="CharismaRightBracketLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 140.0
 margin_top = 140.0
 margin_right = 160.0
@@ -468,7 +468,7 @@ text = ")"
 align = 1
 valign = 1
 
-[node name="ACTextLabel" type="Label" parent="Control2/Panel"]
+[node name="ACTextLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 4.0
 margin_top = 180.0
 margin_right = 40.0
@@ -477,7 +477,7 @@ custom_fonts/font = ExtResource( 3 )
 text = "AC"
 valign = 1
 
-[node name="ACValueLabel" type="Label" parent="Control2/Panel"]
+[node name="ACValueLabel" type="Label" parent="RightControl/Panel"]
 margin_left = 40.0
 margin_top = 180.0
 margin_right = 100.0

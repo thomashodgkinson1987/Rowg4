@@ -10,11 +10,26 @@ public class MainScene : Node2D
     private ViewportContainer node_viewportContainer;
     private Viewport node_viewport;
 
-    private RichTextLabel node_messageLog;
-    private RichTextLabel node_startMessage;
+    private RichTextLabel node_messageLogLabel;
+    private RichTextLabel node_introMessageLabel;
 
     private Label node_healthValueLabel;
     private Label node_maxHealthValueLabel;
+
+    private Label node_strengthValueLabel;
+    private Label node_strengthModifierValueLabel;
+    private Label node_dexterityValueLabel;
+    private Label node_dexterityModifierValueLabel;
+    private Label node_constitutionValueLabel;
+    private Label node_constitutionModifierValueLabel;
+    private Label node_intelligenceValueLabel;
+    private Label node_intelligenceModifierValueLabel;
+    private Label node_wisdomValueLabel;
+    private Label node_wisdomModifierValueLabel;
+    private Label node_charismaValueLabel;
+    private Label node_charismaModifierValueLabel;
+
+    private Label node_ACValueLabel;
 
     #endregion // Nodes
 
@@ -49,11 +64,30 @@ public class MainScene : Node2D
         node_viewportContainer = GetNode<ViewportContainer>("ViewportContainer");
         node_viewport = node_viewportContainer.GetNode<Viewport>("Viewport");
 
-        node_messageLog = GetNode<RichTextLabel>("Control/Panel/RichTextLabel");
-        node_startMessage = GetNode<RichTextLabel>("Control/Panel/RichTextLabel2");
+        Control bottomControl = GetNode<Control>("BottomControl");
 
-        node_healthValueLabel = GetNode<Label>("Control2/Panel/HealthValueLabel");
-        node_maxHealthValueLabel = GetNode<Label>("Control2/Panel/MaxHealthValueLabel");
+        node_messageLogLabel = bottomControl.GetNode<RichTextLabel>("Panel/MessageLogLabel");
+        node_introMessageLabel = bottomControl.GetNode<RichTextLabel>("Panel/IntroMessageLabel");
+
+        Control rightControl = GetNode<Control>("RightControl");
+
+        node_healthValueLabel = rightControl.GetNode<Label>("Panel/HealthValueLabel");
+        node_maxHealthValueLabel = rightControl.GetNode<Label>("Panel/MaxHealthValueLabel");
+
+        node_strengthValueLabel = rightControl.GetNode<Label>("Panel/StrengthValueLabel");
+        node_strengthModifierValueLabel = rightControl.GetNode<Label>("Panel/StrengthModifierValueLabel");
+        node_dexterityValueLabel = rightControl.GetNode<Label>("Panel/DexterityValueLabel");
+        node_dexterityModifierValueLabel = rightControl.GetNode<Label>("Panel/DexterityModifierValueLabel");
+        node_constitutionValueLabel = rightControl.GetNode<Label>("Panel/ConstitutionValueLabel");
+        node_constitutionModifierValueLabel = rightControl.GetNode<Label>("Panel/ConstitutionModifierValueLabel");
+        node_intelligenceValueLabel = rightControl.GetNode<Label>("Panel/IntelligenceValueLabel");
+        node_intelligenceModifierValueLabel = rightControl.GetNode<Label>("Panel/IntelligenceModifierValueLabel");
+        node_wisdomValueLabel = rightControl.GetNode<Label>("Panel/WisdomValueLabel");
+        node_wisdomModifierValueLabel = rightControl.GetNode<Label>("Panel/WisdomModifierValueLabel");
+        node_charismaValueLabel = rightControl.GetNode<Label>("Panel/CharismaValueLabel");
+        node_charismaModifierValueLabel = rightControl.GetNode<Label>("Panel/CharismaModifierValueLabel");
+
+        node_ACValueLabel = rightControl.GetNode<Label>("Panel/ACValueLabel");
     }
 
     public override void _Ready ()
@@ -76,8 +110,8 @@ public class MainScene : Node2D
         {
             uint scancode = inputEventKey.Scancode;
 
-            if (node_startMessage.Visible)
-                node_startMessage.Visible = false;
+            if (node_introMessageLabel.Visible)
+                node_introMessageLabel.Visible = false;
         }
     }
 
@@ -90,7 +124,7 @@ public class MainScene : Node2D
     private void AddMessage (string message)
     {
         m_messages.Add(message);
-        node_messageLog.AppendBbcode(message);
+        node_messageLogLabel.AppendBbcode(message);
     }
 
     #endregion // Private methods
@@ -98,6 +132,11 @@ public class MainScene : Node2D
 
 
     #region Callback methods
+
+    private void UpdatePlayerUI (PlayerTile playerTile)
+    {
+
+    }
 
     private void OnPlayerHitEnemy (PlayerTile playerTile, EnemyTile enemyTile, int damage)
     {
